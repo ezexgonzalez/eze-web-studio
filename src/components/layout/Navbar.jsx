@@ -33,10 +33,11 @@ function Navbar() {
           {navLinks.map((link) => (
             <a
               href={`#${link.toLowerCase()}`}
-              className="text-sm font-medium text-slate-400/90 transition hover:text-slate-50"
+              className="group relative py-1 text-sm font-medium text-slate-400/90 transition-colors duration-300 ease-out hover:text-cyan-100"
               key={link}
             >
               {link}
+              <span className="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 rounded-full bg-cyan-300/80 transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </a>
           ))}
         </div>
