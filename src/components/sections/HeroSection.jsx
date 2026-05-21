@@ -25,7 +25,7 @@ function HeroPreviewCard() {
   ];
 
   return (
-    <GlassCard className="relative mx-auto w-full max-w-md overflow-hidden p-4 ring-1 ring-cyan-300/[0.07] sm:p-5 lg:max-w-lg">
+    <GlassCard className="relative mx-auto w-full max-w-md overflow-hidden p-4 ring-1 ring-cyan-300/[0.07] transition-[border-color,box-shadow,transform] duration-500 ease-out hover:border-cyan-300/[0.2] hover:shadow-[0_28px_110px_rgba(0,0,0,0.5),0_0_42px_rgba(34,211,238,0.09)] motion-safe:animate-[hero-fade-up_800ms_ease-out_140ms_both] motion-safe:lg:hover:-translate-y-1 motion-reduce:animate-none sm:p-5 lg:max-w-lg">
       <div className="absolute -right-24 top-10 h-56 w-56 rounded-full bg-cyan-300/[0.12] blur-3xl" />
       <div className="absolute -bottom-24 left-8 h-40 w-40 rounded-full bg-cyan-500/[0.055] blur-3xl" />
       <div className="relative">
@@ -60,7 +60,7 @@ function HeroPreviewCard() {
         <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3">
           {mainItems.map((item) => (
             <div
-              className="rounded-2xl border border-white/[0.075] bg-white/[0.032] p-3.5"
+              className="rounded-2xl border border-white/[0.075] bg-white/[0.032] p-3.5 transition-[background-color,border-color,transform] duration-300 ease-out hover:border-cyan-300/[0.24] hover:bg-white/[0.055]"
               key={item.label}
             >
               <div
@@ -79,7 +79,7 @@ function HeroPreviewCard() {
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {[social, faq].map((item) => (
             <div
-              className="flex items-center justify-between rounded-full border border-white/[0.07] bg-white/[0.028] px-3.5 py-2.5"
+              className="flex items-center justify-between rounded-full border border-white/[0.07] bg-white/[0.028] px-3.5 py-2.5 transition-[background-color,border-color] duration-300 ease-out hover:border-cyan-300/[0.22] hover:bg-white/[0.05]"
               key={item}
             >
               <span className="text-xs font-medium text-slate-300">{item}</span>
@@ -88,7 +88,7 @@ function HeroPreviewCard() {
           ))}
         </div>
 
-        <div className="mt-4 flex items-center justify-between rounded-2xl border border-cyan-300/[0.15] bg-cyan-300/[0.075] px-4 py-3.5 shadow-[0_0_26px_rgba(34,211,238,0.055)]">
+        <div className="mt-4 flex items-center justify-between rounded-2xl border border-cyan-300/[0.15] bg-cyan-300/[0.075] px-4 py-3.5 shadow-[0_0_26px_rgba(34,211,238,0.055)] transition-[background-color,border-color,box-shadow] duration-300 ease-out hover:border-cyan-300/[0.28] hover:bg-cyan-300/[0.095] hover:shadow-[0_0_34px_rgba(34,211,238,0.09)]">
           <span className="text-sm font-semibold text-cyan-100">
             Consultar ahora
           </span>
@@ -105,13 +105,13 @@ function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:py-32"
+      className="relative isolate flex min-h-screen items-center overflow-hidden bg-black px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:py-32"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_44%,rgba(34,211,238,0.11),transparent_28%),radial-gradient(circle_at_48%_100%,rgba(6,182,212,0.035),transparent_30%),linear-gradient(180deg,#000000_0%,#000000_58%,#02040a_100%)]" />
       <div className="absolute inset-x-8 top-24 -z-10 h-px bg-gradient-to-r from-transparent via-cyan-300/[0.12] to-transparent sm:top-28" />
 
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-20">
-        <div className="max-w-[46rem]">
+        <div className="max-w-[46rem] motion-safe:animate-[hero-fade-up_700ms_ease-out_both] motion-reduce:animate-none">
           <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.07] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
             {hero.eyebrow}
           </p>

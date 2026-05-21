@@ -20,4 +20,20 @@ export const siteConfig = {
     "Redes",
     "Preguntas frecuentes",
   ],
+
+  problem: {
+    eyebrow: "El problema",
+    title:
+      "Muchos negocios tienen presencia online, pero no una presentación clara.",
+    description:
+      "Instagram ayuda a mostrar movimiento, pero muchas veces la información importante queda dispersa: servicios en historias destacadas, precios en publicaciones viejas, ubicación en la bio y contacto perdido entre mensajes.",
+    secondaryText:
+      "Cuando una persona tiene que buscar demasiado, es más fácil que abandone antes de consultar.",
+    cards: [
+      "Información dispersa",
+      "Servicios poco claros",
+      "Contacto difícil de encontrar",
+      "Poca confianza para nuevos clientes",
+    ],
+  },
 };
