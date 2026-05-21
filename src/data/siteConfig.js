@@ -36,4 +36,29 @@ export const siteConfig = {
       "Poca confianza para nuevos clientes",
     ],
   },
+
+  solution: {
+    eyebrow: "LA SOLUCIÓN",
+    title: "Una landing ordena todo en un solo lugar.",
+    description:
+      "Una página simple puede funcionar como la presentación digital de tu negocio. Muestra lo importante de forma clara y lleva a la persona directo al contacto.",
+    strongPhrase:
+      "Menos vueltas para el cliente. Más claridad para tu negocio.",
+    before: {
+      title: "Antes",
+      items: [
+        "Información dispersa",
+        "Contacto perdido",
+        "Cliente confundido",
+      ],
+    },
+    after: {
+      title: "Después",
+      items: [
+        "Servicios claros",
+        "WhatsApp visible",
+        "Negocio más confiable",
+      ],
+    },
+  },
 };

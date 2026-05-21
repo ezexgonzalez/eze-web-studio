@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { siteConfig } from "../../data/siteConfig";
 import Button from "../ui/Button";
 
@@ -19,9 +20,32 @@ function LogoMark() {
 }
 
 function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 12);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="absolute inset-x-0 top-0 z-20 px-4 py-4 sm:px-6 lg:px-8">
-      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 rounded-full border border-white/[0.08] bg-black/[0.42] px-3 py-2.5 shadow-lg shadow-black/10 backdrop-blur-xl sm:px-3.5 md:grid-cols-[1fr_auto_1fr]">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 px-4 transition-[padding] duration-300 ease-out sm:px-6 lg:px-8 ${
+        isScrolled ? "py-2.5" : "py-4"
+      }`}
+    >
+      <nav
+        className={`mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 rounded-full border px-3 shadow-lg backdrop-blur-xl transition-[background-color,border-color,box-shadow,padding] duration-300 ease-out sm:px-3.5 md:grid-cols-[1fr_auto_1fr] ${
+          isScrolled
+            ? "border-white/[0.12] bg-black/[0.68] py-2 shadow-black/20"
+            : "border-white/[0.08] bg-black/[0.42] py-2.5 shadow-black/10"
+        }`}
+      >
         <a href="/" className="flex items-center gap-3">
           <LogoMark />
           <span className="text-sm font-semibold tracking-wide text-slate-50/95">
