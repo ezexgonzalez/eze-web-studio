@@ -15,7 +15,7 @@ export const siteConfig = {
     description:
       "Si tu información está dispersa en redes, una landing clara puede ayudarte a mostrar tus servicios, generar más confianza y facilitar el contacto.",
     primaryCta: "Quiero mejorar mi presencia online",
-    secondaryCta: "Ver cómo funciona",
+    secondaryCta: "Ver qué incluye",
   },
 
   previewItems: [
@@ -32,7 +32,7 @@ export const siteConfig = {
     title:
       "Muchos negocios tienen presencia online, pero no una presentación clara.",
     description:
-      "Instagram ayuda a mostrar movimiento, pero muchas veces la información importante queda dispersa: servicios en historias destacadas, precios en publicaciones viejas, ubicación en la bio y contacto perdido entre mensajes.",
+      "Instagram ayuda a mostrar movimiento, pero muchas veces la información clave queda dispersa entre historias, publicaciones, bio y mensajes.",
     secondaryText:
       "Cuando una persona tiene que buscar demasiado, es más fácil que abandone antes de consultar.",
     cards: [
@@ -70,17 +70,26 @@ export const siteConfig = {
 
   includes: {
     eyebrow: "QUÉ INCLUYE",
-    title: "Todo lo necesario para que tu negocio se entienda rápido.",
+    title: "Lo esencial para que tu negocio se entienda rápido.",
     description:
-      "Una landing no tiene que ser complicada para ser útil. Puede reunir en un solo lugar la información clave de tu negocio y hacer que contactarte sea más fácil.",
-    items: [
-      "Servicios",
-      "Fotos",
-      "Ubicación",
-      "WhatsApp",
-      "Redes",
-      "Preguntas frecuentes",
-      "Diseño adaptable a celular",
+      "Una landing simple no tiene que tener mil secciones. Tiene que ordenar lo importante: qué ofrecés, cómo te encuentran y cómo pueden contactarte.",
+    cta: "Ver servicios y packs",
+    groups: [
+      {
+        title: "Contenido",
+        description: "Lo que una persona necesita entender antes de consultar.",
+        items: ["Servicios", "Fotos", "Preguntas frecuentes"],
+      },
+      {
+        title: "Contacto",
+        description: "Los caminos claros para encontrarte y escribirte.",
+        items: ["WhatsApp", "Redes", "Ubicación"],
+      },
+      {
+        title: "Experiencia",
+        description: "Una navegación simple, clara y pensada para celular.",
+        items: ["Diseño adaptable a celular", "Claridad visual"],
+      },
     ],
   },
 
@@ -88,11 +97,21 @@ export const siteConfig = {
     eyebrow: "SOBRE EZE WEB STUDIO",
     title: "Diseño web independiente, claro y directo.",
     description:
-      "Eze Web Studio es un servicio personal de diseño y desarrollo de páginas web para negocios, profesionales y emprendimientos que quieren verse más profesionales online.",
+      "Eze Web Studio es un servicio personal para negocios, profesionales y emprendimientos que quieren verse más profesionales online sin meterse en una web complicada.",
     secondaryText:
-      "No trabajo como una agencia gigante. Trabajo de forma directa, cuidando el diseño, la claridad y la experiencia visual para que cada web sea simple, útil y profesional.",
+      "Trabajo de forma directa, cuidando diseño, claridad y experiencia visual para que cada web sea simple, útil y profesional.",
     highlightedPhrase:
       "Una marca personal, un trato directo y una web pensada con criterio.",
+    manifesto: {
+      label: "CRITERIO DEL ESTUDIO",
+      title: "Claridad antes que decoración.",
+      principles: [
+        "Diseño con intención.",
+        "Trato directo, sin vueltas.",
+        "Webs simples, útiles y profesionales.",
+      ],
+      closing: "Eze Web Studio · diseño web independiente",
+    },
   },
 
   packs: {

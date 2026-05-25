@@ -133,7 +133,7 @@ function HeroSection() {
             </Button>
             <Button
               as="a"
-              href="#proceso"
+              href="#servicios"
               variant="secondary"
               className="w-full sm:w-auto"
             >
