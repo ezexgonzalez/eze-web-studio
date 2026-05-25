@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "../../data/siteConfig";
 import Button from "../ui/Button";
 
-const navLinks = ["Inicio", "Servicios", "Proceso", "Contacto"];
+const navLinks = ["Inicio", "Problema", "Servicios", "Sobre Eze", "Contacto"];
+
+const navTargets = {
+  Inicio: "inicio",
+  Problema: "problema",
+  Servicios: "servicios",
+  "Sobre Eze": "sobre-eze",
+  Contacto: "contacto",
+};
 
 function LogoMark() {
   return (
@@ -56,7 +64,7 @@ function Navbar() {
         <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
             <a
-              href={`#${link.toLowerCase()}`}
+              href={`#${navTargets[link]}`}
               className="group relative py-1 text-sm font-medium text-slate-400/90 transition-colors duration-300 ease-out hover:text-cyan-100"
               key={link}
             >
