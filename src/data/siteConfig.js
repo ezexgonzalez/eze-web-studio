@@ -94,24 +94,15 @@ export const siteConfig = {
   },
 
   about: {
+    editorialTitle:
+      "Detr\u00e1s de cada landing hay una idea simple: que tu negocio se entienda r\u00e1pido y se vea profesional.",
+    editorialDescription:
+      "Eze Web Studio es un servicio personal de dise\u00f1o y desarrollo web para negocios, profesionales y emprendimientos.",
+    editorialSecondaryText:
+      "Trabajo de forma directa, cuidando la estructura, el dise\u00f1o y la experiencia visual para que cada web sea clara, \u00fatil y f\u00e1cil de consultar.",
+    principles:
+      "Dise\u00f1o con criterio \u00b7 Trato directo \u00b7 Webs simples y \u00fatiles",
     eyebrow: "SOBRE EZE WEB STUDIO",
-    title: "Diseño web independiente, claro y directo.",
-    description:
-      "Eze Web Studio es un servicio personal para negocios, profesionales y emprendimientos que quieren verse más profesionales online sin meterse en una web complicada.",
-    secondaryText:
-      "Trabajo de forma directa, cuidando diseño, claridad y experiencia visual para que cada web sea simple, útil y profesional.",
-    highlightedPhrase:
-      "Una marca personal, un trato directo y una web pensada con criterio.",
-    manifesto: {
-      label: "CRITERIO DEL ESTUDIO",
-      title: "Claridad antes que decoración.",
-      principles: [
-        "Diseño con intención.",
-        "Trato directo, sin vueltas.",
-        "Webs simples, útiles y profesionales.",
-      ],
-      closing: "Eze Web Studio · diseño web independiente",
-    },
   },
 
   packs: {
