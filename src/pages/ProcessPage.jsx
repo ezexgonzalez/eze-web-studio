@@ -31,26 +31,20 @@ function ProcessPage() {
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12 lg:grid-cols-3">
           {process.steps.map((step, index) => (
-            <Reveal
-              className="h-full"
-              delay={index * 70}
-              key={step.title}
-            >
-              <GlassCard
-              className="group relative overflow-hidden p-5 transition-[border-color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-cyan-300/[0.22] hover:bg-white/[0.048] sm:p-6"
-            >
-              <div className="mb-5 flex items-center gap-3">
-                <span className="text-xs font-semibold text-cyan-200/90">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="h-px flex-1 rounded-full bg-white/[0.12] transition-colors duration-300 group-hover:bg-cyan-300/[0.36]" />
-              </div>
-              <h2 className="text-lg font-semibold text-slate-50">
-                {step.title}
-              </h2>
-              <p className="mt-3 text-sm leading-6 text-slate-400">
-                {step.description}
-              </p>
+            <Reveal className="h-full" delay={index * 70} key={step.title}>
+              <GlassCard className="group relative overflow-hidden p-5 transition-[border-color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-cyan-300/[0.22] hover:bg-white/[0.048] sm:p-6">
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="text-xs font-semibold text-cyan-200/90">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-px flex-1 rounded-full bg-white/[0.12] transition-colors duration-300 group-hover:bg-cyan-300/[0.36]" />
+                </div>
+                <h2 className="text-lg font-semibold text-slate-50">
+                  {step.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-slate-400">
+                  {step.description}
+                </p>
               </GlassCard>
             </Reveal>
           ))}
