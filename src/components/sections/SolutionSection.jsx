@@ -1,4 +1,5 @@
 import { siteConfig } from "../../data/siteConfig";
+import Reveal from "../ui/Reveal";
 
 function ComparisonCard({ title, items, featured = false }) {
   return (
@@ -66,7 +67,7 @@ function SolutionSection() {
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <div className="absolute right-0 top-10 -z-10 h-72 w-72 translate-x-1/3 rounded-full bg-cyan-300/[0.055] blur-3xl" />
 
-      <div className="mx-auto w-full max-w-7xl">
+      <Reveal className="mx-auto w-full max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:gap-16">
           <div className="max-w-2xl">
             <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
@@ -86,14 +87,18 @@ function SolutionSection() {
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12">
-          <ComparisonCard title={solution.before.title} items={solution.before.items} />
-          <ComparisonCard
-            title={solution.after.title}
-            items={solution.after.items}
-            featured
-          />
+          <Reveal delay={80}>
+            <ComparisonCard title={solution.before.title} items={solution.before.items} />
+          </Reveal>
+          <Reveal delay={160}>
+            <ComparisonCard
+              title={solution.after.title}
+              items={solution.after.items}
+              featured
+            />
+          </Reveal>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
