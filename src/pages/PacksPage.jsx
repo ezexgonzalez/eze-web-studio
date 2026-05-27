@@ -112,38 +112,38 @@ function PacksPage() {
 
         <Reveal delay={120}>
           <GlassCard className="mt-6 overflow-hidden p-5 sm:p-6 lg:p-7">
-          <div className="max-w-2xl">
-            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
-              Antes de cotizar
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-slate-50 sm:text-3xl">
-              Aclaraciones importantes antes de avanzar.
-            </h2>
-          </div>
+            <div className="max-w-2xl">
+              <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
+                Antes de cotizar
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-slate-50 sm:text-3xl">
+                Aclaraciones importantes antes de avanzar.
+              </h2>
+            </div>
 
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            {quoteNotes.map((note, index) => (
-              <Reveal
-                as="article"
-                className="rounded-2xl border border-white/[0.08] bg-black/[0.22] p-4 sm:p-5"
-                delay={index * 70}
-                key={note.title}
-              >
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="text-[0.66rem] font-semibold text-cyan-200/90">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-px flex-1 bg-white/[0.1]" />
-                </div>
-                <h3 className="text-base font-semibold text-slate-50">
-                  {note.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">
-                  {note.text}
-                </p>
-              </Reveal>
-            ))}
-          </div>
+            <div className="mt-6 grid gap-3 md:grid-cols-3">
+              {quoteNotes.map((note, index) => (
+                <Reveal
+                  as="article"
+                  className="rounded-2xl border border-white/[0.08] bg-black/[0.22] p-4 sm:p-5"
+                  delay={index * 70}
+                  key={note.title}
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="text-[0.66rem] font-semibold text-cyan-200/90">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px flex-1 bg-white/[0.1]" />
+                  </div>
+                  <h3 className="text-base font-semibold text-slate-50">
+                    {note.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">
+                    {note.text}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </GlassCard>
         </Reveal>
 

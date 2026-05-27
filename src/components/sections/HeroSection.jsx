@@ -105,7 +105,7 @@ function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative isolate flex min-h-screen items-center overflow-hidden bg-black px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:py-32"
+      className="relative isolate flex min-h-screen scroll-mt-28 items-center overflow-hidden bg-black px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:py-32"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_44%,rgba(34,211,238,0.11),transparent_28%),radial-gradient(circle_at_48%_100%,rgba(6,182,212,0.035),transparent_30%),linear-gradient(180deg,#000000_0%,#000000_58%,#02040a_100%)]" />
       <div className="absolute inset-x-8 top-24 -z-10 h-px bg-gradient-to-r from-transparent via-cyan-300/[0.12] to-transparent sm:top-28" />

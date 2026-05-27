@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { siteConfig } from "../../data/siteConfig";
 import { getContactUrls } from "../../utils/contactUrls";
@@ -37,6 +37,7 @@ function LogoMark() {
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerRef = useRef(null);
   const contactUrls = getContactUrls(siteConfig.contact);
 
   useEffect(() => {
@@ -50,11 +51,36 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handlePointerDown = (event) => {
+      if (!headerRef.current?.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 px-4 transition-[padding] duration-300 ease-out sm:px-6 lg:px-8 ${
         isScrolled ? "py-2.5" : "py-4"
       }`}
+      ref={headerRef}
     >
       <nav
         className={`mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 rounded-full border px-3 shadow-lg backdrop-blur-xl transition-[background-color,border-color,box-shadow,padding] duration-300 ease-out sm:px-3.5 md:grid-cols-[1fr_auto_1fr] ${
@@ -107,6 +133,7 @@ function Navbar() {
         <Button
           as="a"
           href={contactUrls.whatsapp}
+          onClick={() => setIsMobileMenuOpen(false)}
           rel="noreferrer"
           target="_blank"
           className="min-h-10 justify-self-end px-4 py-2 text-xs sm:px-5 sm:text-sm"
@@ -121,6 +148,7 @@ function Navbar() {
             ? "max-h-80 translate-y-0 border-white/[0.1] bg-black/[0.72] opacity-100"
             : "max-h-0 -translate-y-2 border-transparent bg-black/0 opacity-0"
         }`}
+        aria-hidden={!isMobileMenuOpen}
         id="mobile-menu"
       >
         <div className="grid gap-1 p-2">
@@ -135,6 +163,7 @@ function Navbar() {
               }
               key={link.label}
               onClick={() => setIsMobileMenuOpen(false)}
+              tabIndex={isMobileMenuOpen ? 0 : -1}
               to={link.to}
             >
               {link.label}
