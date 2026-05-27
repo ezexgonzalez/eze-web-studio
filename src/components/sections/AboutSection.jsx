@@ -1,4 +1,5 @@
 import { siteConfig } from "../../data/siteConfig";
+import Reveal from "../ui/Reveal";
 
 function AboutSection() {
   const { about } = siteConfig;
@@ -11,7 +12,7 @@ function AboutSection() {
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/[0.035] blur-3xl" />
 
-      <div className="mx-auto w-full max-w-5xl">
+      <Reveal className="mx-auto w-full max-w-5xl">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mx-auto mb-7 h-px w-20 bg-cyan-300/70 shadow-[0_0_18px_rgba(34,211,238,0.22)]" />
 
@@ -32,7 +33,7 @@ function AboutSection() {
             {about.principles}
           </p>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
