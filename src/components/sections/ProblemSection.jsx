@@ -1,4 +1,5 @@
 import { siteConfig } from "../../data/siteConfig";
+import Reveal from "../ui/Reveal";
 
 function ProblemSection() {
   const { problem } = siteConfig;
@@ -11,7 +12,7 @@ function ProblemSection() {
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/[0.16] to-transparent" />
       <div className="absolute left-1/2 top-0 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/[0.045] blur-3xl" />
 
-      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <Reveal className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="max-w-2xl">
           <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
             {problem.eyebrow}
@@ -29,8 +30,9 @@ function ProblemSection() {
 
           <div className="grid gap-3 sm:grid-cols-2">
             {problem.cards.map((card, index) => (
-              <div
+              <Reveal
                 className="group rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4 transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-cyan-300/[0.22] hover:bg-white/[0.055] hover:shadow-[0_0_30px_rgba(34,211,238,0.065)]"
+                delay={index * 70}
                 key={card}
               >
                 <div className="mb-5 flex items-center gap-3">
@@ -42,11 +44,11 @@ function ProblemSection() {
                 <p className="text-sm font-semibold text-slate-100 sm:text-base">
                   {card}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

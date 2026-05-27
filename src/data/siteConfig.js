@@ -2,12 +2,6 @@ export const siteConfig = {
   brandName: "Eze Web Studio",
   tagline: "Webs modernas para negocios y emprendimientos",
 
-  contactLinks: {
-    whatsapp: "#contacto",
-    instagram: "https://www.instagram.com/ezewebstudio",
-    email: "mailto:hola@ezewebstudio.com",
-  },
-
   hero: {
     eyebrow: "Diseño web para negocios y emprendimientos",
     title: "Tu negocio puede verse más profesional sin necesitar una web complicada.",
@@ -204,6 +198,7 @@ export const siteConfig = {
   faq: {
     eyebrow: "FAQ",
     title: "Preguntas frecuentes",
+    description: "Algunas dudas comunes antes de crear una landing.",
     items: [
       {
         question: "¿Necesito tener dominio?",
@@ -230,10 +225,25 @@ export const siteConfig = {
         answer:
           "Por ahora el foco está en páginas simples, claras y profesionales. Si necesitás algo más complejo, podemos evaluarlo.",
       },
+      {
+        question: "¿Cuánto tarda una landing?",
+        answer:
+          "Depende del contenido y del alcance, pero la idea es trabajar con un proceso simple y claro.",
+      },
+      {
+        question: "¿Puedo pedir cambios?",
+        answer:
+          "Sí. Cada pack puede incluir rondas de ajustes para corregir detalles antes de publicar.",
+      },
     ],
   },
 
   contact: {
+    whatsappNumber: "541161993279",
+    whatsappMessage:
+      "Hola Eze, quiero consultar por una landing para mi negocio.",
+    email: "ezewebstudio.dev@gmail.com",
+    instagramUrl: "https://www.instagram.com/ezewebstudio",
     eyebrow: "CONTACTO",
     title: "¿Querés mejorar la presencia online de tu negocio?",
     description:

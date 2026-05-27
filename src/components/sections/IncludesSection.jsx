@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { siteConfig } from "../../data/siteConfig";
 import Button from "../ui/Button";
+import Reveal from "../ui/Reveal";
 
 function StructureBlock({ group, index }) {
   return (
@@ -47,7 +49,7 @@ function IncludesSection() {
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/[0.14] to-transparent" />
       <div className="absolute left-0 top-24 -z-10 h-72 w-72 -translate-x-1/3 rounded-full bg-cyan-300/[0.04] blur-3xl" />
 
-      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
+      <Reveal className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
         <div className="max-w-xl">
           <div>
             <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
@@ -63,8 +65,8 @@ function IncludesSection() {
           </p>
 
           <Button
-            as="a"
-            href="#contacto"
+            as={Link}
+            to="/packs"
             variant="secondary"
             className="mt-7 w-full sm:w-auto"
           >
@@ -100,7 +102,7 @@ function IncludesSection() {
             </p>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

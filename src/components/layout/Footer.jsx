@@ -1,11 +1,13 @@
 import { siteConfig } from "../../data/siteConfig";
+import { getContactUrls } from "../../utils/contactUrls";
 
 function Footer() {
-  const { brandName, footer, contactLinks } = siteConfig;
+  const { brandName, footer, contact } = siteConfig;
+  const contactUrls = getContactUrls(contact);
   const links = [
-    { label: "Instagram", href: contactLinks.instagram, external: true },
-    { label: "WhatsApp", href: contactLinks.whatsapp },
-    { label: "Email", href: contactLinks.email },
+    { label: "Instagram", href: contactUrls.instagram, external: true },
+    { label: "WhatsApp", href: contactUrls.whatsapp, external: true },
+    { label: "Email", href: contactUrls.email },
   ];
 
   return (
