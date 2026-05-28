@@ -1,5 +1,6 @@
 import { siteConfig } from "../../data/siteConfig";
 import Reveal from "../ui/Reveal";
+import SectionHeader from "../ui/SectionHeader";
 
 function ProblemSection() {
   const { problem } = siteConfig;
@@ -13,14 +14,11 @@ function ProblemSection() {
       <div className="absolute left-1/2 top-0 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/[0.045] blur-3xl" />
 
       <Reveal className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <div className="max-w-2xl">
-          <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
-            {problem.eyebrow}
-          </p>
-          <h2 className="text-balance text-3xl font-semibold leading-tight tracking-[-0.025em] text-slate-50 sm:text-4xl lg:text-5xl">
-            {problem.title}
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow={problem.eyebrow}
+          title={problem.title}
+          className="max-w-2xl"
+        />
 
         <div className="space-y-7">
           <div className="max-w-2xl space-y-5 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">

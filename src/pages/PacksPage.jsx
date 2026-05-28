@@ -2,6 +2,8 @@ import { siteConfig } from "../data/siteConfig";
 import { getContactUrls } from "../utils/contactUrls";
 import Button from "../components/ui/Button";
 import GlassCard from "../components/ui/GlassCard";
+import InfoCallout from "../components/ui/InfoCallout";
+import PageHero from "../components/ui/PageHero";
 import Reveal from "../components/ui/Reveal";
 
 function PackCard({ pack, whatsappUrl, delay = 0 }) {
@@ -62,24 +64,10 @@ function PackCard({ pack, whatsappUrl, delay = 0 }) {
   );
 }
 
-const quoteNotes = [
-  {
-    title: "Cómo se define",
-    text: "Los packs funcionan como punto de partida. Después de conocer tu negocio y revisar qué necesitás mostrar, te paso una propuesta clara con alcance, tiempos y valor.",
-  },
-  {
-    title: "Rondas de ajustes",
-    text: "Una ronda de ajustes es una revisión completa donde reunís los cambios que querés hacer sobre la web. Así el proceso se mantiene ordenado y sin vueltas.",
-  },
-  {
-    title: "Qué no está incluido",
-    text: "Los packs no incluyen dominio, hosting pago externo, sesiones de fotos ni sistemas complejos. Si necesitás algo extra, se puede evaluar aparte.",
-  },
-];
-
 function PacksPage() {
-  const { contact, packs } = siteConfig;
+  const { contact, packsPage } = siteConfig;
   const contactUrls = getContactUrls(contact);
+  const { finalCta, quoteNotes } = packsPage;
 
   return (
     <section className="relative isolate overflow-hidden bg-black px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-36 lg:px-8 lg:pb-28">
@@ -88,19 +76,15 @@ function PacksPage() {
 
       <div className="mx-auto w-full max-w-7xl">
         <Reveal className="max-w-3xl">
-          <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
-            {packs.eyebrow}
-          </p>
-          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-[-0.025em] text-slate-50 sm:text-5xl lg:text-6xl">
-            {packs.title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-            {packs.description}
-          </p>
+          <PageHero
+            eyebrow={packsPage.eyebrow}
+            title={packsPage.title}
+            description={packsPage.description}
+          />
         </Reveal>
 
         <div className="mt-10 grid items-stretch gap-4 lg:mt-12 lg:grid-cols-3">
-          {packs.items.map((pack, index) => (
+          {packsPage.items.map((pack, index) => (
             <PackCard
               key={pack.title}
               pack={pack}
@@ -111,18 +95,13 @@ function PacksPage() {
         </div>
 
         <Reveal delay={120}>
-          <GlassCard className="mt-6 overflow-hidden p-5 sm:p-6 lg:p-7">
-            <div className="max-w-2xl">
-              <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
-                Antes de cotizar
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-slate-50 sm:text-3xl">
-                Aclaraciones importantes antes de avanzar.
-              </h2>
-            </div>
-
+          <InfoCallout
+            eyebrow={quoteNotes.eyebrow}
+            title={quoteNotes.title}
+            className="mt-6 overflow-hidden p-5 sm:p-6 lg:p-7"
+          >
             <div className="mt-6 grid gap-3 md:grid-cols-3">
-              {quoteNotes.map((note, index) => (
+              {quoteNotes.items.map((note, index) => (
                 <Reveal
                   as="article"
                   className="rounded-2xl border border-white/[0.08] bg-black/[0.22] p-4 sm:p-5"
@@ -144,13 +123,13 @@ function PacksPage() {
                 </Reveal>
               ))}
             </div>
-          </GlassCard>
+          </InfoCallout>
         </Reveal>
 
         <Reveal delay={120}>
-          <GlassCard className="mt-6 grid gap-5 p-5 sm:p-6 md:grid-cols-[1fr_auto] md:items-center">
+          <InfoCallout className="mt-6 grid gap-5 p-5 sm:p-6 md:grid-cols-[1fr_auto] md:items-center">
             <p className="text-base leading-7 text-slate-200">
-              ¿No sabés qué pack elegir? Escribime y vemos qué necesita tu negocio.
+              {finalCta.text}
             </p>
             <Button
               as="a"
@@ -159,9 +138,9 @@ function PacksPage() {
               rel="noreferrer"
               target="_blank"
             >
-              Consultar por WhatsApp
+              {finalCta.buttonLabel}
             </Button>
-          </GlassCard>
+          </InfoCallout>
         </Reveal>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { siteConfig } from "../../data/siteConfig";
 import Reveal from "../ui/Reveal";
+import SectionHeader from "../ui/SectionHeader";
 
 function ComparisonCard({ title, items, featured = false }) {
   return (
@@ -69,14 +70,11 @@ function SolutionSection() {
 
       <Reveal className="mx-auto w-full max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:gap-16">
-          <div className="max-w-2xl">
-            <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
-              {solution.eyebrow}
-            </p>
-            <h2 className="text-balance text-3xl font-semibold leading-tight tracking-[-0.025em] text-slate-50 sm:text-4xl lg:text-5xl">
-              {solution.title}
-            </h2>
-          </div>
+          <SectionHeader
+            eyebrow={solution.eyebrow}
+            title={solution.title}
+            className="max-w-2xl"
+          />
 
           <div className="max-w-2xl space-y-5 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
             <p>{solution.description}</p>
