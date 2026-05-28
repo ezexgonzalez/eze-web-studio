@@ -1,9 +1,10 @@
 import { siteConfig } from "../data/siteConfig";
 import GlassCard from "../components/ui/GlassCard";
+import PageHero from "../components/ui/PageHero";
 import Reveal from "../components/ui/Reveal";
 
 function FaqPage() {
-  const { faq } = siteConfig;
+  const { faqPage } = siteConfig;
 
   return (
     <section className="relative isolate overflow-hidden bg-black px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-36 lg:px-8 lg:pb-28">
@@ -12,19 +13,15 @@ function FaqPage() {
 
       <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
         <Reveal className="max-w-xl">
-          <p className="mb-5 inline-flex rounded-full border border-cyan-300/[0.15] bg-cyan-300/[0.06] px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cyan-200/95">
-            {faq.eyebrow}
-          </p>
-          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-[-0.025em] text-slate-50 sm:text-5xl lg:text-6xl">
-            {faq.title}
-          </h1>
-          <p className="mt-6 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-            {faq.description}
-          </p>
+          <PageHero
+            eyebrow={faqPage.eyebrow}
+            title={faqPage.title}
+            description={faqPage.description}
+          />
         </Reveal>
 
         <div className="grid gap-3">
-          {faq.items.map((item, index) => (
+          {faqPage.items.map((item, index) => (
             <Reveal
               delay={index * 55}
               key={item.question}

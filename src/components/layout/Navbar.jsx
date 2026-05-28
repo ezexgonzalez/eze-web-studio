@@ -4,21 +4,6 @@ import { siteConfig } from "../../data/siteConfig";
 import { getContactUrls } from "../../utils/contactUrls";
 import Button from "../ui/Button";
 
-const navLinks = [
-  { label: "Inicio", to: "/" },
-  { label: "Servicios", to: "/packs" },
-  { label: "Proceso", to: "/proceso" },
-  { label: "Contacto", to: "/#contacto" },
-];
-
-const mobileNavLinks = [
-  { label: "Inicio", to: "/" },
-  { label: "Servicios", to: "/packs" },
-  { label: "Proceso", to: "/proceso" },
-  { label: "FAQ", to: "/faq" },
-  { label: "Contacto", to: "/#contacto" },
-];
-
 function LogoMark() {
   return (
     <span
@@ -38,6 +23,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const headerRef = useRef(null);
+  const { nav } = siteConfig;
   const contactUrls = getContactUrls(siteConfig.contact);
 
   useEffect(() => {
@@ -93,7 +79,7 @@ function Navbar() {
           <button
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={isMobileMenuOpen ? nav.closeMenuLabel : nav.openMenuLabel}
             className="rounded-full outline-none transition-transform duration-300 ease-out hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 md:hidden"
             onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
             type="button"
@@ -118,7 +104,7 @@ function Navbar() {
         </div>
 
         <div className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
+          {nav.links.map((link) => (
             <NavLink
               to={link.to}
               className="group relative py-1 text-sm font-medium text-slate-400/90 transition-colors duration-300 ease-out hover:text-cyan-100"
@@ -138,7 +124,7 @@ function Navbar() {
           target="_blank"
           className="min-h-10 justify-self-end px-4 py-2 text-xs sm:px-5 sm:text-sm"
         >
-          Hablemos
+          {nav.cta}
         </Button>
       </nav>
 
@@ -152,7 +138,7 @@ function Navbar() {
         id="mobile-menu"
       >
         <div className="grid gap-1 p-2">
-          {mobileNavLinks.map((link) => (
+          {nav.mobileLinks.map((link) => (
             <NavLink
               className={({ isActive }) =>
                 `rounded-2xl px-4 py-3 text-sm font-medium transition-[background-color,color] duration-300 ease-out ${
