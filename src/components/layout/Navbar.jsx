@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { siteConfig } from "../../data/siteConfig";
 import { getContactUrls } from "../../utils/contactUrls";
 import Button from "../ui/Button";
-
-const navLinks = [
-  { label: "Inicio", to: "/" },
-  { label: "Servicios", to: "/packs" },
-  { label: "Proceso", to: "/proceso" },
-  { label: "Contacto", to: "/#contacto" },
-];
-
-const mobileNavLinks = [
-  { label: "Inicio", to: "/" },
-  { label: "Servicios", to: "/packs" },
-  { label: "Proceso", to: "/proceso" },
-  { label: "FAQ", to: "/faq" },
-  { label: "Contacto", to: "/#contacto" },
-];
 
 function LogoMark() {
   return (
@@ -37,6 +22,8 @@ function LogoMark() {
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerRef = useRef(null);
+  const { nav } = siteConfig;
   const contactUrls = getContactUrls(siteConfig.contact);
 
   useEffect(() => {
@@ -50,11 +37,36 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handlePointerDown = (event) => {
+      if (!headerRef.current?.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("pointerdown", handlePointerDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 px-4 transition-[padding] duration-300 ease-out sm:px-6 lg:px-8 ${
         isScrolled ? "py-2.5" : "py-4"
       }`}
+      ref={headerRef}
     >
       <nav
         className={`mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 rounded-full border px-3 shadow-lg backdrop-blur-xl transition-[background-color,border-color,box-shadow,padding] duration-300 ease-out sm:px-3.5 md:grid-cols-[1fr_auto_1fr] ${
@@ -67,7 +79,7 @@ function Navbar() {
           <button
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={isMobileMenuOpen ? nav.closeMenuLabel : nav.openMenuLabel}
             className="rounded-full outline-none transition-transform duration-300 ease-out hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 md:hidden"
             onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
             type="button"
@@ -92,7 +104,7 @@ function Navbar() {
         </div>
 
         <div className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
+          {nav.links.map((link) => (
             <NavLink
               to={link.to}
               className="group relative py-1 text-sm font-medium text-slate-400/90 transition-colors duration-300 ease-out hover:text-cyan-100"
@@ -107,11 +119,12 @@ function Navbar() {
         <Button
           as="a"
           href={contactUrls.whatsapp}
+          onClick={() => setIsMobileMenuOpen(false)}
           rel="noreferrer"
           target="_blank"
           className="min-h-10 justify-self-end px-4 py-2 text-xs sm:px-5 sm:text-sm"
         >
-          Hablemos
+          {nav.cta}
         </Button>
       </nav>
 
@@ -121,10 +134,11 @@ function Navbar() {
             ? "max-h-80 translate-y-0 border-white/[0.1] bg-black/[0.72] opacity-100"
             : "max-h-0 -translate-y-2 border-transparent bg-black/0 opacity-0"
         }`}
+        aria-hidden={!isMobileMenuOpen}
         id="mobile-menu"
       >
         <div className="grid gap-1 p-2">
-          {mobileNavLinks.map((link) => (
+          {nav.mobileLinks.map((link) => (
             <NavLink
               className={({ isActive }) =>
                 `rounded-2xl px-4 py-3 text-sm font-medium transition-[background-color,color] duration-300 ease-out ${
@@ -135,6 +149,7 @@ function Navbar() {
               }
               key={link.label}
               onClick={() => setIsMobileMenuOpen(false)}
+              tabIndex={isMobileMenuOpen ? 0 : -1}
               to={link.to}
             >
               {link.label}

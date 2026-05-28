@@ -12,7 +12,7 @@ function ScrollToRouteTarget() {
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: 'instant' })
+      window.scrollTo({ top: 0, behavior: 'auto' })
       return
     }
 

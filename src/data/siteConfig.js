@@ -2,6 +2,25 @@ export const siteConfig = {
   brandName: "Eze Web Studio",
   tagline: "Webs modernas para negocios y emprendimientos",
 
+  nav: {
+    links: [
+      { label: "Inicio", to: "/" },
+      { label: "Servicios", to: "/packs" },
+      { label: "Proceso", to: "/proceso" },
+      { label: "Contacto", to: "/#contacto" },
+    ],
+    mobileLinks: [
+      { label: "Inicio", to: "/" },
+      { label: "Servicios", to: "/packs" },
+      { label: "Proceso", to: "/proceso" },
+      { label: "FAQ", to: "/faq" },
+      { label: "Contacto", to: "/#contacto" },
+    ],
+    cta: "Hablemos",
+    openMenuLabel: "Abrir menú",
+    closeMenuLabel: "Cerrar menú",
+  },
+
   hero: {
     eyebrow: "Diseño web para negocios y emprendimientos",
     title: "Tu negocio puede verse más profesional sin necesitar una web complicada.",
@@ -20,6 +39,13 @@ export const siteConfig = {
     "Redes",
     "Preguntas frecuentes",
   ],
+
+  faqPreview: {
+    title: "¿Tenés dudas antes de consultar?",
+    description:
+      "Revisá respuestas sobre dominio, tiempos, contenido, cambios y funcionamiento en celular.",
+    cta: "Ver preguntas frecuentes",
+  },
 
   problem: {
     eyebrow: "El problema",
@@ -99,7 +125,7 @@ export const siteConfig = {
     eyebrow: "SOBRE EZE WEB STUDIO",
   },
 
-  packs: {
+  packsPage: {
     eyebrow: "PACKS",
     title: "Servicios pensados para empezar simple.",
     description:
@@ -154,9 +180,31 @@ export const siteConfig = {
         cta: "Consultar Optimización",
       },
     ],
+    quoteNotes: {
+      eyebrow: "Antes de cotizar",
+      title: "Aclaraciones importantes antes de avanzar.",
+      items: [
+        {
+          title: "Cómo se define",
+          text: "Los packs funcionan como punto de partida. Después de conocer tu negocio y revisar qué necesitás mostrar, te paso una propuesta clara con alcance, tiempos y valor.",
+        },
+        {
+          title: "Rondas de ajustes",
+          text: "Una ronda de ajustes es una revisión completa donde reunís los cambios que querés hacer sobre la web. Así el proceso se mantiene ordenado y sin vueltas.",
+        },
+        {
+          title: "Qué no está incluido",
+          text: "Los packs no incluyen dominio, hosting pago externo, sesiones de fotos ni sistemas complejos. Si necesitás algo extra, se puede evaluar aparte.",
+        },
+      ],
+    },
+    finalCta: {
+      text: "¿No sabés qué pack elegir? Escribime y vemos qué necesita tu negocio.",
+      buttonLabel: "Consultar por WhatsApp",
+    },
   },
 
-  process: {
+  processPage: {
     eyebrow: "PROCESO",
     title: "Un proceso claro, sin complicarte de más.",
     description:
@@ -193,9 +241,13 @@ export const siteConfig = {
           "Tu web queda lista para compartir y empezar a recibir consultas.",
       },
     ],
+    finalCta: {
+      text: "El objetivo no es complicarte con tecnología. Es ordenar tu presencia online y dejarte una web clara para compartir.",
+      buttonLabel: "Quiero empezar",
+    },
   },
 
-  faq: {
+  faqPage: {
     eyebrow: "FAQ",
     title: "Preguntas frecuentes",
     description: "Algunas dudas comunes antes de crear una landing.",
