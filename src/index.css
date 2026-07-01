@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: "Plus Jakarta Sans", Manrope, Inter, system-ui, sans-serif;
   color: #f8fafc;
   background: #000000;
   font-synthesis: none;
@@ -38,6 +39,109 @@ body {
   }
 }
 
+@keyframes hero-orb-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-2.5rem, 1.5rem, 0) scale(1.04);
+  }
+}
+
+@keyframes hero-orb-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(2rem, -1.25rem, 0) scale(1.035);
+  }
+}
+
+@keyframes hero-orb-drift-c {
+  0%,
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(calc(-50% + 1.25rem), calc(-50% - 0.75rem), 0)
+      scale(1.025);
+  }
+}
+
+@keyframes rubros-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translate3d(0, 0, 0) scale(0.82);
+  }
+
+  45% {
+    opacity: 0.35;
+    transform: translate3d(0.35rem, -0.25rem, 0) scale(1);
+  }
+
+  70% {
+    opacity: 0.24;
+    transform: translate3d(-0.2rem, 0.18rem, 0) scale(0.9);
+  }
+}
+
+.hero-orb-a {
+  animation: hero-orb-drift-a 24s ease-in-out infinite;
+}
+
+.hero-orb-b {
+  animation: hero-orb-drift-b 28s ease-in-out infinite;
+}
+
+.hero-orb-c {
+  animation: hero-orb-drift-c 30s ease-in-out infinite;
+}
+
+.rubros-marquee {
+  animation: rubros-marquee 42s linear infinite;
+}
+
+.hero-sparkle {
+  animation: hero-sparkle-twinkle 6.5s ease-in-out infinite;
+  opacity: 0.22;
+}
+
+.hero-sparkle-b {
+  animation-delay: -1.4s;
+  animation-duration: 7.2s;
+}
+
+.hero-sparkle-c {
+  animation-delay: -2.8s;
+  animation-duration: 8s;
+}
+
+.hero-sparkle-d {
+  animation-delay: -4.1s;
+  animation-duration: 6.8s;
+}
+
+.hero-sparkle-e {
+  animation-delay: -5.2s;
+  animation-duration: 7.6s;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -54,6 +158,14 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-orb-a,
+  .hero-orb-b,
+  .hero-orb-c,
+  .hero-sparkle,
+  .rubros-marquee {
+    animation: none;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;
