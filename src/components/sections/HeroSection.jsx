@@ -2,29 +2,30 @@ import { siteConfig } from "../../data/siteConfig";
 import { getContactUrls } from "../../utils/contactUrls";
 import { RiWhatsappFill } from "react-icons/ri";
 
-const sideNotes = {
+const sideTags = {
   left: [
     {
-      title: "Restaurante El Sauce",
-      detail: "sin sitio web · 0 consultas",
-      className: "lg:absolute lg:left-0 lg:top-[37%] lg:-translate-x-4 lg:-translate-y-1/2",
+      label: "+ Consultas",
+      className: "lg:absolute lg:left-[8%] lg:top-[32%]",
+      lineClassName: "left-full top-1/2 ml-4 w-36 rotate-[8deg] origin-left",
     },
     {
-      title: "Ana Rodríguez, Psicóloga",
-      detail: "bio de Instagram como sitio",
-      className: "lg:absolute lg:left-0 lg:top-[64%] lg:-translate-x-8 lg:-translate-y-1/2",
+      label: "+ Visibilidad",
+      className: "lg:absolute lg:left-[32%] lg:top-[68%]",
+      lineClassName: "left-full top-1/2 ml-4 w-28 -rotate-[14deg] origin-left",
     },
   ],
   right: [
     {
-      title: "Peluquería La Moderna",
-      detail: "landing activa · +18 consultas/mes",
-      className: "lg:absolute lg:right-0 lg:top-[37%] lg:translate-x-4 lg:-translate-y-1/2",
+      label: "Carga Rápida",
+      className: "lg:absolute lg:right-[10%] lg:top-[29%]",
+      lineClassName:
+        "right-full top-1/2 mr-4 w-32 -rotate-[10deg] origin-right",
     },
     {
-      title: "Lucas Fernández, Arquitecto",
-      detail: "online · recibe consultas",
-      className: "lg:absolute lg:right-0 lg:top-[64%] lg:translate-x-8 lg:-translate-y-1/2",
+      label: "Diseño a Medida",
+      className: "lg:absolute lg:right-[28%] lg:top-[65%]",
+      lineClassName: "right-full top-1/2 mr-4 w-40 rotate-[13deg] origin-right",
     },
   ],
 };
@@ -41,31 +42,16 @@ const categories = [
   "Comercios locales",
 ];
 
-function AmbientMarks() {
-  return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,#000000_0%,#020304_48%,#000000_100%)]" />
-      <div className="absolute -right-40 top-4 h-[28rem] w-[28rem] rounded-full bg-cyan-100/[0.055] blur-[145px] sm:h-[42rem] sm:w-[42rem]" />
-      <div className="absolute -bottom-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-slate-100/[0.052] blur-[140px] sm:h-[38rem] sm:w-[38rem]" />
-      <div className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-white/[0.028] blur-[155px]" />
-      <div className="absolute inset-x-8 top-[18%] h-px bg-gradient-to-r from-transparent via-white/[0.045] to-transparent" />
-      <div className="absolute inset-x-16 bottom-[16%] h-px bg-gradient-to-r from-transparent via-cyan-100/[0.035] to-transparent" />
-    </div>
-  );
-}
-
 function HeroAmbientEffects() {
   return (
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.04),transparent_40%)]" />
-      <div className="hero-orb-a absolute -right-32 -top-44 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(190,245,255,0.16),rgba(190,245,255,0.055)_42%,transparent_70%)] blur-[155px] lg:h-[52rem] lg:w-[52rem]" />
-      <div className="hero-orb-b absolute -bottom-48 -left-36 h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.11),rgba(255,255,255,0.04)_45%,transparent_72%)] blur-[145px] lg:h-[42rem] lg:w-[42rem]" />
-      <div className="hero-orb-c absolute left-1/2 top-[46%] h-[30rem] w-[58rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(120,220,235,0.12),rgba(255,255,255,0.055)_38%,transparent_72%)] blur-[36px]" />
-      <div className="absolute left-1/2 top-10 h-64 w-[66rem] -translate-x-1/2 rounded-full bg-white/[0.035] blur-[112px]" />
-      <div className="absolute right-[18%] top-[31%] h-36 w-36 rounded-full bg-slate-200/[0.06] blur-[74px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(4,9,11,0.72)_0%,rgba(0,0,0,0.84)_48%,rgba(0,0,0,0.96)_100%)]" />
+      <div className="hero-light-a absolute -left-32 -top-28 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(103,232,249,0.34)_0%,rgba(103,232,249,0.18)_34%,rgba(103,232,249,0.07)_54%,transparent_72%)] blur-[150px] sm:h-[46rem] sm:w-[46rem]" />
+      <div className="hero-light-b absolute -bottom-36 -right-32 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(103,232,249,0.3)_0%,rgba(103,232,249,0.16)_36%,rgba(103,232,249,0.065)_56%,transparent_74%)] blur-[150px] sm:h-[48rem] sm:w-[48rem]" />
+      <div className="absolute left-1/2 top-[48%] h-[22rem] w-[44rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.48),rgba(0,0,0,0.18)_42%,transparent_72%)] blur-[54px]" />
 
       <div className="absolute inset-x-10 top-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent lg:inset-x-20" />
       <div className="absolute inset-x-10 bottom-20 h-px bg-gradient-to-r from-transparent via-white/[0.032] to-transparent lg:inset-x-20" />
@@ -79,33 +65,29 @@ function HeroAmbientEffects() {
       <span className="hero-sparkle hero-sparkle-c absolute left-[23%] bottom-[27%] h-1 w-1 rounded-full bg-slate-100/70" />
       <span className="hero-sparkle hero-sparkle-d absolute right-[24%] bottom-[31%] hidden h-1 w-1 rounded-full bg-white/70 sm:block" />
       <span className="hero-sparkle hero-sparkle-e absolute right-[34%] top-[25%] hidden h-1.5 w-1.5 rounded-full bg-cyan-50/60 lg:block" />
+      <div className="hero-noise absolute inset-0 opacity-[0.04] mix-blend-overlay" />
     </div>
   );
 }
 
-function SideNote({ note, align = "left" }) {
-  const alignment =
-    align === "right" ? "items-end text-right" : "items-start text-left";
-  const markerAlignment = align === "right" ? "justify-end" : "justify-start";
-  const edgeRule =
+function SideTag({ tag, align = "left" }) {
+  const dotPosition =
     align === "right"
-      ? "border-r border-white/[0.045] pr-4"
-      : "border-l border-white/[0.045] pl-4";
+      ? "left-0 -translate-x-1/2"
+      : "right-0 translate-x-1/2";
 
   return (
     <div
-      className={`hidden max-w-[14rem] flex-col gap-2.5 text-slate-200/42 opacity-75 lg:flex ${alignment} ${edgeRule} ${note.className}`}
+      className={`hidden items-center justify-center rounded-[100px] border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-[0.72rem] font-medium leading-none text-white/48 shadow-[0_18px_70px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-2xl lg:flex ${tag.className}`}
     >
-      <div className={`flex w-full items-center gap-2 ${markerAlignment}`}>
-        <span className="h-px w-14 bg-gradient-to-r from-white/[0.014] via-white/[0.105] to-white/[0.014]" />
-        <span className="h-1 w-1 rounded-full bg-cyan-100/18 shadow-[0_0_12px_rgba(224,242,254,0.09)]" />
-      </div>
-      <p className="text-[0.78rem] font-medium leading-5 tracking-normal">
-        {note.title}
-      </p>
-      <p className="text-[0.7rem] font-normal leading-4 tracking-[0.01em] text-slate-400/44">
-        {note.detail}
-      </p>
+      <span
+        className={`absolute h-px border-t border-white/[0.085] ${tag.lineClassName}`}
+      >
+        <span
+          className={`absolute top-0 h-1 w-1 -translate-y-1/2 rounded-full bg-white/20 shadow-[0_0_14px_rgba(103,232,249,0.14)] ${dotPosition}`}
+        />
+      </span>
+      {tag.label}
     </div>
   );
 }
@@ -127,12 +109,12 @@ function CategoryStrip() {
   const loopedCategories = [...categories, ...categories];
 
   return (
-    <div className="relative mt-3 w-full overflow-hidden border-t border-white/[0.032] px-2 pt-4 sm:mt-4 sm:px-4 lg:mt-4 lg:px-8 lg:pt-[1.05rem]">
+    <div className="absolute bottom-0 left-0 z-10 box-border w-full max-w-full overflow-hidden border-t border-white/[0.032] px-2 py-4 sm:px-4 lg:px-8">
       <div
         aria-hidden="true"
         className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.075] to-transparent"
       />
-      <div className="mx-auto max-w-[90rem] overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_9%,black_91%,transparent)]">
+      <div className="mx-auto w-full max-w-[90rem] overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_9%,black_91%,transparent)]">
         <div className="rubros-marquee flex w-max items-center text-center text-[0.68rem] font-normal leading-5 tracking-[0.018em] text-slate-500/62 sm:text-[0.71rem]">
           {loopedCategories.map((category, index) => (
             <span
@@ -160,39 +142,31 @@ function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative isolate flex min-h-[100svh] scroll-mt-28 flex-col items-center overflow-hidden bg-black px-4 pb-5 pt-[6.75rem] sm:px-6 sm:pb-6 sm:pt-[7.25rem] lg:px-0 lg:pb-5 lg:pt-[7rem]"
+      className="relative isolate flex h-[100dvh] w-full scroll-mt-28 flex-col overflow-hidden bg-black"
     >
-      <AmbientMarks />
+      <HeroAmbientEffects />
 
-      <div className="mx-auto flex w-full flex-1 flex-col lg:w-[94vw] lg:max-w-[1560px]">
-        <div className="relative flex-1 overflow-hidden rounded-[2rem] border border-white/[0.075] bg-[#020304]/92 shadow-[0_36px_170px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(255,255,255,0.06)] motion-safe:animate-[hero-fade-up_700ms_ease-out_both] motion-reduce:animate-none sm:rounded-[2.35rem] lg:min-h-[560px] lg:rounded-[2.9rem]">
-          <HeroAmbientEffects />
-
-          <div className="grid h-full items-center gap-10 px-6 py-11 sm:px-8 sm:py-[3.25rem] lg:grid-cols-[minmax(15rem,1fr)_minmax(0,50rem)_minmax(15rem,1fr)] lg:gap-18 lg:px-14 lg:py-14 xl:grid-cols-[minmax(19rem,1fr)_minmax(0,50rem)_minmax(19rem,1fr)] xl:gap-28 xl:px-[4.5rem]">
+      <div className="relative z-20 grid w-full flex-1 items-center gap-10 px-6 pb-[100px] pt-[6.75rem] motion-safe:animate-[hero-fade-up_700ms_ease-out_both] motion-reduce:animate-none sm:px-8 sm:pb-[100px] sm:pt-[7.25rem] lg:grid-cols-[minmax(13rem,1fr)_minmax(0,50rem)_minmax(13rem,1fr)] lg:gap-16 lg:px-16 lg:pb-[100px] lg:pt-[7rem] xl:grid-cols-[minmax(18rem,1fr)_minmax(0,52rem)_minmax(18rem,1fr)] xl:gap-24 xl:px-24">
             <div className="z-20 hidden h-full min-h-[30rem] lg:relative lg:col-start-1 lg:block">
-              {sideNotes.left.map((note) => (
-                <SideNote key={note.title} note={note} />
+              {sideTags.left.map((tag) => (
+                <SideTag key={tag.label} tag={tag} />
               ))}
             </div>
 
-            <div className="absolute left-1/2 top-[51%] z-20 isolate w-[calc(100%-3rem)] max-w-[50rem] -translate-x-1/2 -translate-y-1/2 text-center sm:w-[min(50rem,calc(100%-4rem))]">
+            <div className="relative z-20 isolate mx-auto w-full max-w-[50rem] text-center lg:col-start-2">
               <div
                 aria-hidden="true"
-                className="absolute left-1/2 top-[42%] -z-10 h-[18rem] w-[min(46rem,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.055),rgba(103,232,249,0.018)_42%,transparent_72%)] blur-2xl"
+                className="absolute left-1/2 top-[42%] -z-10 h-[18rem] w-[min(46rem,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.38),rgba(0,0,0,0.18)_46%,transparent_72%)] blur-2xl"
               />
-              <h1 className="mx-auto max-w-[42rem] text-balance text-[2.75rem] font-medium leading-[0.98] tracking-[-0.016em] text-slate-50 drop-shadow-[0_18px_58px_rgba(0,0,0,0.48)] sm:text-[4.25rem] sm:leading-[0.96] lg:text-[5.1rem] lg:leading-[0.95]">
+              <h1 className="mx-auto max-w-[42rem] bg-gradient-to-b from-white via-slate-50 to-slate-300 bg-clip-text text-balance text-[2.75rem] font-medium leading-[0.98] tracking-normal text-transparent drop-shadow-[0_18px_58px_rgba(0,0,0,0.58)] sm:text-[4.25rem] sm:leading-[0.96] lg:text-[5.1rem] lg:leading-[0.95]">
                 Landing pages{" "}
-                <span className="font-semibold text-white drop-shadow-[0_0_18px_rgba(255,255,255,0.12)]">
-                  claras
-                </span>
+                <span className="font-semibold text-white">claras</span>
                 <br />
                 para recibir{" "}
-                <span className="font-semibold text-white drop-shadow-[0_0_20px_rgba(125,211,252,0.13)]">
-                  más consultas
-                </span>
+                <span className="font-semibold text-white">más consultas</span>
               </h1>
 
-              <p className="mx-auto mt-5 max-w-[42rem] text-[0.98rem] font-normal leading-7 text-slate-300/74 sm:mt-6 sm:text-[1.05rem] sm:leading-8">
+              <p className="mx-auto mt-5 max-w-[42rem] text-[0.98rem] font-normal leading-7 text-slate-200/84 sm:mt-6 sm:text-[1.05rem] sm:leading-8">
                 Diseño sitios modernos para negocios que necesitan verse mejor,
                 explicar rápido qué ofrecen y recibir consultas por WhatsApp.
               </p>
@@ -203,7 +177,7 @@ function HeroSection() {
                   className="absolute inset-x-8 top-1/2 -z-10 hidden h-10 -translate-y-1/2 rounded-full bg-cyan-100/[0.035] blur-2xl sm:block"
                 />
                 <a
-                  className="inline-flex min-h-[3.25rem] w-full items-center justify-center gap-3 rounded-full border border-cyan-100/72 bg-cyan-100 px-8 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_34px_rgba(103,232,249,0.13),inset_0_1px_0_rgba(255,255,255,0.54)] transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-white hover:bg-white hover:shadow-[0_0_42px_rgba(103,232,249,0.18),inset_0_1px_0_rgba(255,255,255,0.68)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100 sm:w-auto"
+                  className="inline-flex min-h-[3.25rem] w-full items-center justify-center gap-3 rounded-full border border-cyan-100/74 bg-cyan-100 px-8 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_70px_rgba(103,232,249,0.15),0_0_130px_rgba(103,232,249,0.07),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-10px_24px_rgba(34,211,238,0.16)] transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-white hover:bg-white hover:shadow-[0_0_82px_rgba(103,232,249,0.2),0_0_150px_rgba(103,232,249,0.09),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-10px_24px_rgba(34,211,238,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-100 sm:w-auto"
                   href={contactUrls.whatsapp}
                   rel="noreferrer"
                   target="_blank"
@@ -224,23 +198,24 @@ function HeroSection() {
                   </span>
                 </a>
               </div>
-
             </div>
 
             <div className="z-20 hidden h-full min-h-[30rem] lg:relative lg:col-start-3 lg:block">
-              {sideNotes.right.map((note) => (
-                <SideNote align="right" key={note.title} note={note} />
+              {sideTags.right.map((tag) => (
+                <SideTag
+                  align="right"
+                  key={tag.label}
+                  tag={tag}
+                />
               ))}
             </div>
-          </div>
 
           <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 hidden justify-center lg:flex">
             <ScrollSignal />
           </div>
-        </div>
-
-        <CategoryStrip />
       </div>
+
+      <CategoryStrip />
     </section>
   );
 }

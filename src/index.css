@@ -15,16 +15,23 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   background: #000000;
   color: #f8fafc;
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 @keyframes hero-fade-up {
@@ -39,37 +46,31 @@ body {
   }
 }
 
-@keyframes hero-orb-drift-a {
-  0%,
-  100% {
+@keyframes hero-light-drift-a {
+  from {
     transform: translate3d(0, 0, 0) scale(1);
   }
 
   50% {
-    transform: translate3d(-2.5rem, 1.5rem, 0) scale(1.04);
+    transform: translate3d(4rem, 2.5rem, 0) scale(1.08);
+  }
+
+  to {
+    transform: translate3d(7rem, 4rem, 0) scale(1.16);
   }
 }
 
-@keyframes hero-orb-drift-b {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+@keyframes hero-light-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.08);
   }
 
   50% {
-    transform: translate3d(2rem, -1.25rem, 0) scale(1.035);
-  }
-}
-
-@keyframes hero-orb-drift-c {
-  0%,
-  100% {
-    transform: translate3d(-50%, -50%, 0) scale(1);
+    transform: translate3d(-4rem, -2.5rem, 0) scale(1);
   }
 
-  50% {
-    transform: translate3d(calc(-50% + 1.25rem), calc(-50% - 0.75rem), 0)
-      scale(1.025);
+  to {
+    transform: translate3d(-7rem, -4rem, 0) scale(1.14);
   }
 }
 
@@ -101,20 +102,30 @@ body {
   }
 }
 
-.hero-orb-a {
-  animation: hero-orb-drift-a 24s ease-in-out infinite;
+.hero-light-a {
+  animation: hero-light-drift-a 12s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-.hero-orb-b {
-  animation: hero-orb-drift-b 28s ease-in-out infinite;
+.hero-light-b {
+  animation: hero-light-drift-b 12s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-.hero-orb-c {
-  animation: hero-orb-drift-c 30s ease-in-out infinite;
+.hero-noise {
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.72) 0 0.7px, transparent 0.85px),
+    radial-gradient(circle at 76% 34%, rgba(255, 255, 255, 0.52) 0 0.6px, transparent 0.8px),
+    radial-gradient(circle at 42% 72%, rgba(255, 255, 255, 0.44) 0 0.65px, transparent 0.85px);
+  background-size:
+    23px 23px,
+    31px 31px,
+    19px 19px;
 }
 
 .rubros-marquee {
   animation: rubros-marquee 42s linear infinite;
+  will-change: transform;
 }
 
 .hero-sparkle {
@@ -158,9 +169,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-orb-a,
-  .hero-orb-b,
-  .hero-orb-c,
+  .hero-light-a,
+  .hero-light-b,
   .hero-sparkle,
   .rubros-marquee {
     animation: none;
