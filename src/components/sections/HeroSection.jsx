@@ -9,10 +9,12 @@ const sideTags = {
       className: "lg:absolute lg:left-[8%] lg:top-[32%]",
       lineClassName: "left-full top-1/2 ml-4 w-36 rotate-[8deg] origin-left",
     },
+  ],
+  right: [
     {
       label: "+ Visibilidad",
-      className: "lg:absolute lg:left-[32%] lg:top-[68%]",
-      lineClassName: "left-full top-1/2 ml-4 w-28 -rotate-[14deg] origin-left",
+      className: "lg:absolute lg:right-[8%] lg:top-[68%]",
+      lineClassName: "right-full top-1/2 mr-4 w-36 rotate-[8deg] origin-right",
     },
   ],
 };
@@ -191,6 +193,16 @@ function HeroSection() {
                   </span>
                 </a>
               </div>
+            </div>
+
+            <div className="z-20 hidden h-full min-h-[30rem] lg:relative lg:col-start-3 lg:block">
+              {sideTags.right.map((tag) => (
+                <SideTag
+                  align="right"
+                  key={tag.label}
+                  tag={tag}
+                />
+              ))}
             </div>
 
           <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 hidden justify-center lg:flex">
