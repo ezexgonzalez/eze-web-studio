@@ -15,19 +15,6 @@ const sideTags = {
       lineClassName: "left-full top-1/2 ml-4 w-28 -rotate-[14deg] origin-left",
     },
   ],
-  right: [
-    {
-      label: "Carga Rápida",
-      className: "lg:absolute lg:right-[10%] lg:top-[29%]",
-      lineClassName:
-        "right-full top-1/2 mr-4 w-32 -rotate-[10deg] origin-right",
-    },
-    {
-      label: "Diseño a Medida",
-      className: "lg:absolute lg:right-[28%] lg:top-[65%]",
-      lineClassName: "right-full top-1/2 mr-4 w-40 rotate-[13deg] origin-right",
-    },
-  ],
 };
 
 const categories = [
@@ -153,17 +140,23 @@ function HeroSection() {
               ))}
             </div>
 
-            <div className="relative z-20 isolate mx-auto w-full max-w-[50rem] text-center lg:col-start-2">
+            <div className="relative z-20 isolate mx-auto w-full max-w-[50rem] text-center lg:col-start-2 [@media(min-width:1024px)_and_(max-height:700px)]:-translate-y-8">
               <div
                 aria-hidden="true"
                 className="absolute left-1/2 top-[42%] -z-10 h-[18rem] w-[min(46rem,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.38),rgba(0,0,0,0.18)_46%,transparent_72%)] blur-2xl"
               />
-              <h1 className="mx-auto max-w-[42rem] bg-gradient-to-b from-white via-slate-50 to-slate-300 bg-clip-text text-balance text-[2.75rem] font-medium leading-[0.98] tracking-normal text-transparent drop-shadow-[0_18px_58px_rgba(0,0,0,0.58)] sm:text-[4.25rem] sm:leading-[0.96] lg:text-[5.1rem] lg:leading-[0.95]">
-                Landing pages{" "}
-                <span className="font-semibold text-white">claras</span>
+              <h1 className="mx-auto max-w-[42rem] bg-gradient-to-b from-white via-slate-50 to-slate-300 bg-clip-text text-balance text-[2.75rem] font-medium leading-[0.98] tracking-normal text-transparent drop-shadow-[0_18px_58px_rgba(0,0,0,0.58)] sm:text-[4.25rem] sm:leading-[0.96] lg:relative lg:left-1/2 lg:w-max lg:max-w-none lg:-translate-x-1/2 lg:text-[5.1rem] lg:leading-[0.95]">
+                <span className="lg:whitespace-nowrap">
+                  Landing pages{" "}
+                  <span className="font-semibold text-white">claras</span>
+                </span>
                 <br />
-                para recibir{" "}
-                <span className="font-semibold text-white">más consultas</span>
+                <span className="lg:whitespace-nowrap">
+                  para recibir{" "}
+                  <span className="font-semibold text-white">más</span>
+                </span>
+                <br className="hidden lg:block" />
+                <span className="font-semibold text-white">consultas</span>
               </h1>
 
               <p className="mx-auto mt-5 max-w-[42rem] text-[0.98rem] font-normal leading-7 text-slate-200/84 sm:mt-6 sm:text-[1.05rem] sm:leading-8">
@@ -189,7 +182,7 @@ function HeroSection() {
                   className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.018] px-6 py-3 text-sm font-semibold text-slate-300/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.032)] transition-[background-color,border-color,color,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-white/[0.14] hover:bg-white/[0.045] hover:text-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-300 sm:w-auto"
                   href="#servicios"
                 >
-                  Ver ejemplos
+                  Ver demos
                   <span
                     aria-hidden="true"
                     className="transition-transform duration-300 ease-out group-hover:translate-x-1"
@@ -198,16 +191,6 @@ function HeroSection() {
                   </span>
                 </a>
               </div>
-            </div>
-
-            <div className="z-20 hidden h-full min-h-[30rem] lg:relative lg:col-start-3 lg:block">
-              {sideTags.right.map((tag) => (
-                <SideTag
-                  align="right"
-                  key={tag.label}
-                  tag={tag}
-                />
-              ))}
             </div>
 
           <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 hidden justify-center lg:flex">
