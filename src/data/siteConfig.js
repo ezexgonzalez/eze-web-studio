@@ -76,7 +76,7 @@ export const siteConfig = {
         "Contacto perdido",
         "Cliente confundido",
       ],
-      center: "Tu landing",
+      center: "La landing organiza",
       result: "Consulta por WhatsApp",
     },
   },
