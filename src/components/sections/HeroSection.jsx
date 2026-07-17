@@ -2,23 +2,6 @@ import { siteConfig } from "../../data/siteConfig";
 import { getContactUrls } from "../../utils/contactUrls";
 import { RiWhatsappFill } from "react-icons/ri";
 
-const sideTags = {
-  left: [
-    {
-      label: "+ Consultas",
-      className: "lg:absolute lg:left-[8%] lg:top-[32%]",
-      lineClassName: "left-full top-1/2 ml-4 w-36 rotate-[8deg] origin-left",
-    },
-  ],
-  right: [
-    {
-      label: "+ Visibilidad",
-      className: "lg:absolute lg:right-[8%] lg:top-[68%]",
-      lineClassName: "right-full top-1/2 mr-4 w-36 rotate-[8deg] origin-right",
-    },
-  ],
-};
-
 const categories = [
   "Peluquerías",
   "Restaurantes",
@@ -55,28 +38,6 @@ function HeroAmbientEffects() {
       <span className="hero-sparkle hero-sparkle-d absolute right-[24%] bottom-[31%] hidden h-1 w-1 rounded-full bg-white/70 sm:block" />
       <span className="hero-sparkle hero-sparkle-e absolute right-[34%] top-[25%] hidden h-1.5 w-1.5 rounded-full bg-cyan-50/60 lg:block" />
       <div className="hero-noise absolute inset-0 opacity-[0.04] mix-blend-overlay" />
-    </div>
-  );
-}
-
-function SideTag({ tag, align = "left" }) {
-  const dotPosition =
-    align === "right"
-      ? "left-0 -translate-x-1/2"
-      : "right-0 translate-x-1/2";
-
-  return (
-    <div
-      className={`hidden items-center justify-center rounded-[100px] border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-[0.72rem] font-medium leading-none text-white/48 shadow-[0_18px_70px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-2xl lg:flex ${tag.className}`}
-    >
-      <span
-        className={`absolute h-px border-t border-white/[0.085] ${tag.lineClassName}`}
-      >
-        <span
-          className={`absolute top-0 h-1 w-1 -translate-y-1/2 rounded-full bg-white/20 shadow-[0_0_14px_rgba(103,232,249,0.14)] ${dotPosition}`}
-        />
-      </span>
-      {tag.label}
     </div>
   );
 }
@@ -136,12 +97,6 @@ function HeroSection() {
       <HeroAmbientEffects />
 
       <div className="relative z-20 grid w-full flex-1 items-center gap-10 px-6 pb-[100px] pt-[6.75rem] motion-safe:animate-[hero-fade-up_700ms_ease-out_both] motion-reduce:animate-none sm:px-8 sm:pb-[100px] sm:pt-[7.25rem] lg:grid-cols-[minmax(13rem,1fr)_minmax(0,50rem)_minmax(13rem,1fr)] lg:gap-16 lg:px-16 lg:pb-[100px] lg:pt-[7rem] xl:grid-cols-[minmax(18rem,1fr)_minmax(0,52rem)_minmax(18rem,1fr)] xl:gap-24 xl:px-24">
-            <div className="z-20 hidden h-full min-h-[30rem] lg:relative lg:col-start-1 lg:block">
-              {sideTags.left.map((tag) => (
-                <SideTag key={tag.label} tag={tag} />
-              ))}
-            </div>
-
             <div className="relative z-20 isolate mx-auto w-full max-w-[50rem] text-center lg:col-start-2 [@media(min-width:1024px)_and_(max-height:700px)]:-translate-y-8">
               <div
                 aria-hidden="true"
@@ -193,16 +148,6 @@ function HeroSection() {
                   </span>
                 </a>
               </div>
-            </div>
-
-            <div className="z-20 hidden h-full min-h-[30rem] lg:relative lg:col-start-3 lg:block">
-              {sideTags.right.map((tag) => (
-                <SideTag
-                  align="right"
-                  key={tag.label}
-                  tag={tag}
-                />
-              ))}
             </div>
 
           <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 hidden justify-center lg:flex">
