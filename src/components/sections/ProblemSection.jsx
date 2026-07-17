@@ -26,25 +26,37 @@ function ProblemSection() {
             <p className="text-slate-400">{problem.secondaryText}</p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            {problem.cards.map((card, index) => (
-              <Reveal
-                className="group rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4 transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-cyan-300/[0.22] hover:bg-white/[0.055] hover:shadow-[0_0_30px_rgba(34,211,238,0.065)]"
-                delay={index * 70}
-                key={card}
+          <ol
+            className="flex flex-col border-l border-white/[0.14] pl-4 sm:flex-row sm:items-center sm:border-b sm:border-l-0 sm:pb-4 sm:pl-0"
+            aria-label="Secuencia del problema"
+          >
+            {problem.sequence.map((step, index) => (
+              <li
+                className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-center"
+                key={step}
               >
-                <div className="mb-5 flex items-center gap-3">
-                  <span className="text-xs font-semibold text-cyan-200/90">
+                <div className="flex min-w-0 items-baseline gap-2 py-2 sm:py-0">
+                  <span className="shrink-0 text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="h-px flex-1 rounded-full bg-white/[0.12] transition-colors duration-300 group-hover:bg-cyan-300/[0.35]" />
+                  <span className="text-sm font-medium leading-5 text-slate-300">
+                    {step}
+                  </span>
                 </div>
-                <p className="text-sm font-semibold text-slate-100 sm:text-base">
-                  {card}
-                </p>
-              </Reveal>
+
+                {index < problem.sequence.length - 1 && (
+                  <div
+                    className="flex h-8 items-center sm:mx-3 sm:h-auto sm:min-w-3"
+                    aria-hidden="true"
+                  >
+                    <span className="-ml-[1.15rem] mt-7 rotate-90 bg-black px-1 text-xs text-slate-600 sm:ml-0 sm:mt-0 sm:rotate-0 sm:px-0">
+                      →
+                    </span>
+                  </div>
+                )}
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </Reveal>
     </section>

@@ -2,61 +2,6 @@ import { siteConfig } from "../../data/siteConfig";
 import Reveal from "../ui/Reveal";
 import SectionHeader from "../ui/SectionHeader";
 
-function ComparisonCard({ title, items, featured = false }) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-3xl border p-5 transition-[background-color,border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 sm:p-6 ${
-        featured
-          ? "border-cyan-300/[0.28] bg-cyan-300/[0.06] shadow-[0_0_0_1px_rgba(34,211,238,0.035),0_22px_70px_rgba(34,211,238,0.075)] hover:border-cyan-300/[0.4] hover:bg-cyan-300/[0.075] hover:shadow-[0_0_0_1px_rgba(34,211,238,0.055),0_26px_80px_rgba(34,211,238,0.105)]"
-          : "border-white/[0.075] bg-white/[0.025] shadow-[0_18px_60px_rgba(0,0,0,0.22)] hover:border-white/[0.12] hover:bg-white/[0.04]"
-      }`}
-    >
-      {featured && (
-        <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
-      )}
-
-      <div
-        className={`mb-6 flex items-center justify-between gap-4 border-b pb-4 ${
-          featured ? "border-cyan-300/[0.12]" : "border-white/[0.07]"
-        }`}
-      >
-        <h3
-          className={`text-lg font-semibold ${
-            featured ? "text-cyan-50" : "text-slate-200"
-          }`}
-        >
-          {title}
-        </h3>
-        <span
-          className={`h-px w-14 rounded-full ${
-            featured ? "bg-cyan-300/80 shadow-[0_0_16px_rgba(34,211,238,0.28)]" : "bg-white/[0.14]"
-          }`}
-        />
-      </div>
-
-      <ul className="space-y-3.5">
-        {items.map((item) => (
-          <li
-            className={`flex items-center gap-3 text-sm ${
-              featured ? "text-slate-100" : "text-slate-400"
-            }`}
-            key={item}
-          >
-            <span
-              className={`h-1.5 w-1.5 rounded-full ring-4 ${
-                featured
-                  ? "bg-cyan-300 ring-cyan-300/[0.12]"
-                  : "bg-slate-600 ring-white/[0.035]"
-              }`}
-            />
-            <span className={featured ? "font-medium" : ""}>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 function SolutionSection() {
   const { solution } = siteConfig;
 
@@ -81,20 +26,35 @@ function SolutionSection() {
             <p className="border-l border-cyan-300/40 pl-4 font-semibold text-cyan-100">
               {solution.strongPhrase}
             </p>
-          </div>
-        </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12">
-          <Reveal delay={80}>
-            <ComparisonCard title={solution.before.title} items={solution.before.items} />
-          </Reveal>
-          <Reveal delay={160}>
-            <ComparisonCard
-              title={solution.after.title}
-              items={solution.after.items}
-              featured
-            />
-          </Reveal>
+            <div className="grid justify-items-center pt-6 md:grid-cols-[minmax(0,1fr)_5rem_auto_3rem_auto] md:items-center md:justify-items-stretch md:pt-8">
+              <ul className="w-full space-y-3 text-center md:text-left">
+                {solution.flow.inputs.map((input) => (
+                  <li className="text-sm text-slate-400 sm:text-base" key={input}>
+                    {input}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="relative h-20 w-px bg-white/[0.14] md:h-28 md:w-20 md:bg-transparent" aria-hidden="true">
+                <span className="absolute left-0 top-1/2 hidden h-px w-[5.4rem] origin-left -translate-y-1/2 rotate-[32deg] bg-white/[0.14] md:block" />
+                <span className="absolute left-0 top-1/2 hidden h-px w-full -translate-y-1/2 bg-white/[0.14] md:block" />
+                <span className="absolute bottom-1/2 left-0 hidden h-px w-[5.4rem] origin-left translate-y-1/2 -rotate-[32deg] bg-white/[0.14] md:block" />
+              </div>
+
+              <div className="flex min-w-28 flex-col items-center gap-2 py-2 text-center text-sm font-semibold text-cyan-100 sm:text-base md:py-0">
+                <span className="h-px w-full bg-cyan-300/70" />
+                {solution.flow.center}
+                <span className="h-px w-full bg-cyan-300/70" />
+              </div>
+
+              <div className="h-16 w-px bg-cyan-300/70 md:h-px md:w-full" aria-hidden="true" />
+
+              <p className="max-w-40 text-center text-sm font-semibold leading-5 text-cyan-100 sm:text-base md:pl-3 md:text-left">
+                {solution.flow.result}
+              </p>
+            </div>
+          </div>
         </div>
       </Reveal>
     </section>

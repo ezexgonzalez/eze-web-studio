@@ -55,11 +55,11 @@ export const siteConfig = {
       "Instagram ayuda a mostrar movimiento, pero muchas veces la información clave queda dispersa entre historias, publicaciones, bio y mensajes.",
     secondaryText:
       "Cuando una persona tiene que buscar demasiado, es más fácil que abandone antes de consultar.",
-    cards: [
+    sequence: [
       "Información dispersa",
       "Servicios poco claros",
-      "Contacto difícil de encontrar",
-      "Poca confianza para nuevos clientes",
+      "Contacto difícil",
+      "Abandono",
     ],
   },
 
@@ -70,21 +70,14 @@ export const siteConfig = {
       "Una página simple puede funcionar como la presentación digital de tu negocio. Muestra lo importante de forma clara y lleva a la persona directo al contacto.",
     strongPhrase:
       "Menos vueltas para el cliente. Más claridad para tu negocio.",
-    before: {
-      title: "Antes",
-      items: [
+    flow: {
+      inputs: [
         "Información dispersa",
         "Contacto perdido",
         "Cliente confundido",
       ],
-    },
-    after: {
-      title: "Después",
-      items: [
-        "Servicios claros",
-        "WhatsApp visible",
-        "Negocio más confiable",
-      ],
+      center: "Tu landing",
+      result: "Consulta por WhatsApp",
     },
   },
 
