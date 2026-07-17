@@ -1,10 +1,9 @@
+import { Fragment } from "react";
 import { siteConfig } from "../../data/siteConfig";
 import Reveal from "../ui/Reveal";
 
 function ProblemSection() {
   const { problem } = siteConfig;
-  const pathSteps = problem.sequence.slice(0, -1);
-  const consequence = problem.sequence.at(-1);
 
   return (
     <section
@@ -29,38 +28,32 @@ function ProblemSection() {
             <p className="text-slate-400">{problem.secondaryText}</p>
           </div>
 
-          <div className="mt-8 sm:flex sm:items-start">
-            <ol className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-center" aria-label="Recorrido del problema">
-              {pathSteps.map((step, index) => (
-                <li className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-center" key={step}>
-                  <div className="flex min-w-0 items-baseline gap-2 py-1.5 sm:py-0">
-                    <span className="shrink-0 text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-sm font-medium leading-5 text-slate-300">
-                      {step}
-                    </span>
-                  </div>
-
-                  {index < pathSteps.length - 1 && (
-                    <div className="ml-2 flex h-7 items-center sm:mx-3 sm:h-auto sm:min-w-5 sm:flex-1" aria-hidden="true">
-                      <span className="h-full w-px bg-white/[0.14] sm:h-px sm:w-auto sm:flex-1" />
-                      <span className="-ml-[0.3rem] mt-6 rotate-90 bg-black px-1 text-xs text-slate-600 sm:ml-1 sm:mt-0 sm:rotate-0 sm:px-0">
-                        →
-                      </span>
-                    </div>
-                  )}
+          <ol
+            className="mt-8 grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-y-3 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-x-3 md:gap-y-0"
+            aria-label="Recorrido del problema"
+          >
+            {problem.sequence.map((step, index) => (
+              <Fragment key={step}>
+                <li className="col-span-2 grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] items-baseline md:col-span-1">
+                  <span className="text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 text-sm font-medium leading-5 text-slate-300">
+                    {step}
+                  </span>
                 </li>
-              ))}
-            </ol>
 
-            <div className="mt-6 flex items-baseline gap-2 sm:ml-10 sm:mt-3 sm:min-w-fit">
-              <span className="text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500">
-                {String(problem.sequence.length).padStart(2, "0")}
-              </span>
-              <span className="text-sm font-medium text-slate-300">{consequence}</span>
-            </div>
-          </div>
+                {index < problem.sequence.length - 1 && (
+                  <li
+                    className="col-span-2 justify-self-center text-xs text-slate-600 md:col-span-1"
+                    aria-hidden="true"
+                  >
+                    <span className="inline-block rotate-90 md:rotate-0">→</span>
+                  </li>
+                )}
+              </Fragment>
+            ))}
+          </ol>
         </div>
       </Reveal>
     </section>

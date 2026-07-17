@@ -29,33 +29,34 @@ function SolutionSection() {
             </p>
           </div>
 
-          <div className="mt-8 grid justify-items-center md:grid-cols-[minmax(0,1fr)_5rem_auto_3rem_auto] md:items-center md:justify-items-stretch">
-            <ul className="w-full space-y-3 text-center md:text-right">
-              {solution.flow.inputs.map((input, index) => (
-                <li
-                  className={`text-sm text-slate-400 sm:text-base ${
-                    index === 0 ? "md:pr-6" : index === 1 ? "md:pr-3" : ""
-                  }`}
-                  key={input}
-                >
+          <div className="mt-8 grid justify-items-center gap-y-4 md:grid-cols-[minmax(0,1fr)_5rem_minmax(9rem,auto)_3rem_minmax(0,1fr)] md:grid-rows-3 md:items-center md:gap-y-3">
+            <ul className="grid w-full grid-rows-3 gap-y-3 text-center md:row-span-3 md:text-right">
+              {solution.flow.inputs.map((input) => (
+                <li className="flex items-center justify-center text-sm text-slate-400 sm:text-base md:justify-end" key={input}>
                   {input}
                 </li>
               ))}
             </ul>
 
-            <div className="relative h-20 w-px bg-white/[0.14] md:h-28 md:w-20 md:bg-transparent" aria-hidden="true">
-              <span className="absolute right-0 top-1/2 hidden h-px w-[5.3rem] origin-right -translate-y-1/2 rotate-[19deg] bg-white/[0.14] md:block" />
-              <span className="absolute right-0 top-1/2 hidden h-px w-full -translate-y-1/2 bg-white/[0.14] md:block" />
-              <span className="absolute right-0 top-1/2 hidden h-px w-[5.3rem] origin-right -translate-y-1/2 -rotate-[19deg] bg-white/[0.14] md:block" />
+            <div className="h-16 w-px bg-white/[0.14] md:row-span-3 md:h-full md:w-full md:bg-transparent" aria-hidden="true">
+              <svg
+                className="hidden h-full w-full md:block"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <path d="M 0 16.667 L 100 50" fill="none" stroke="currentColor" className="text-white/[0.14]" vectorEffect="non-scaling-stroke" />
+                <path d="M 0 50 L 100 50" fill="none" stroke="currentColor" className="text-white/[0.14]" vectorEffect="non-scaling-stroke" />
+                <path d="M 0 83.333 L 100 50" fill="none" stroke="currentColor" className="text-white/[0.14]" vectorEffect="non-scaling-stroke" />
+              </svg>
             </div>
 
-            <p className="min-w-36 py-2 text-center text-sm font-semibold text-cyan-100 sm:text-base md:py-0">
+            <p className="text-center text-sm font-semibold text-cyan-100 sm:text-base md:col-start-3 md:row-start-2">
               {solution.flow.center}
             </p>
 
-            <div className="h-16 w-px bg-cyan-300/70 md:h-px md:w-full" aria-hidden="true" />
+            <div className="h-16 w-px bg-cyan-300/70 md:col-start-4 md:row-start-2 md:h-px md:w-full" aria-hidden="true" />
 
-            <p className="max-w-40 text-center text-sm font-semibold leading-5 text-cyan-100 sm:text-base md:pl-3 md:text-left">
+            <p className="max-w-40 text-center text-sm font-semibold leading-5 text-cyan-100 sm:text-base md:col-start-5 md:row-start-2 md:justify-self-start md:text-left">
               {solution.flow.result}
             </p>
           </div>
