@@ -29,34 +29,24 @@ function SolutionSection() {
             </p>
           </div>
 
-          <div className="mt-8 grid justify-items-center gap-y-4 md:grid-cols-[minmax(0,1fr)_5rem_minmax(9rem,auto)_3rem_minmax(0,1fr)] md:grid-rows-3 md:items-center md:gap-y-3">
-            <ul className="grid w-full grid-rows-3 gap-y-3 text-center md:row-span-3 md:text-right">
-              {solution.flow.inputs.map((input) => (
-                <li className="flex items-center justify-center text-sm text-slate-400 sm:text-base md:justify-end" key={input}>
-                  {input}
-                </li>
-              ))}
-            </ul>
+          <div className="mt-8 grid grid-cols-1 items-stretch gap-y-3 md:grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)_2rem_minmax(0,1fr)] md:gap-y-0">
+            <p className="flex min-h-20 min-w-0 items-center justify-center text-center text-sm text-slate-400 sm:text-base">
+              {solution.flow.inputs[0]}
+            </p>
 
-            <div className="h-16 w-px bg-white/[0.14] md:row-span-3 md:h-full md:w-full md:bg-transparent" aria-hidden="true">
-              <svg
-                className="hidden h-full w-full md:block"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                <path d="M 0 16.667 L 100 50" fill="none" stroke="currentColor" className="text-white/[0.14]" vectorEffect="non-scaling-stroke" />
-                <path d="M 0 50 L 100 50" fill="none" stroke="currentColor" className="text-white/[0.14]" vectorEffect="non-scaling-stroke" />
-                <path d="M 0 83.333 L 100 50" fill="none" stroke="currentColor" className="text-white/[0.14]" vectorEffect="non-scaling-stroke" />
-              </svg>
-            </div>
+            <span className="flex min-h-8 items-center justify-center text-xs text-slate-600 md:min-h-20" aria-hidden="true">
+              <span className="inline-block rotate-90 md:rotate-0">→</span>
+            </span>
 
-            <p className="text-center text-sm font-semibold text-cyan-100 sm:text-base md:col-start-3 md:row-start-2">
+            <p className="flex min-h-20 min-w-0 items-center justify-center text-center text-sm font-semibold text-cyan-100 sm:text-base">
               {solution.flow.center}
             </p>
 
-            <div className="h-16 w-px bg-cyan-300/70 md:col-start-4 md:row-start-2 md:h-px md:w-full" aria-hidden="true" />
+            <span className="flex min-h-8 items-center justify-center text-xs text-cyan-300/70 md:min-h-20" aria-hidden="true">
+              <span className="inline-block rotate-90 md:rotate-0">→</span>
+            </span>
 
-            <p className="max-w-40 text-center text-sm font-semibold leading-5 text-cyan-100 sm:text-base md:col-start-5 md:row-start-2 md:justify-self-start md:text-left">
+            <p className="flex min-h-20 min-w-0 items-center justify-center text-center text-sm font-semibold leading-5 text-cyan-100 sm:text-base">
               {solution.flow.result}
             </p>
           </div>

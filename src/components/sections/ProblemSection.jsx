@@ -29,12 +29,12 @@ function ProblemSection() {
           </div>
 
           <ol
-            className="mt-8 grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-y-3 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-x-3 md:gap-y-0"
+            className="mt-8 grid grid-cols-1 items-stretch gap-y-3 md:grid-cols-[minmax(0,1fr)_2rem_minmax(0,1fr)_2rem_minmax(0,1fr)_2rem_minmax(0,1fr)] md:gap-y-0"
             aria-label="Recorrido del problema"
           >
             {problem.sequence.map((step, index) => (
               <Fragment key={step}>
-                <li className="col-span-2 grid min-w-0 grid-cols-[2rem_minmax(0,1fr)] items-baseline md:col-span-1">
+                <li className="grid min-h-20 min-w-0 grid-rows-[auto_1fr] gap-y-2">
                   <span className="text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -45,7 +45,7 @@ function ProblemSection() {
 
                 {index < problem.sequence.length - 1 && (
                   <li
-                    className="col-span-2 justify-self-center text-xs text-slate-600 md:col-span-1"
+                    className="flex min-h-8 items-center justify-center text-xs text-slate-600 md:min-h-20"
                     aria-hidden="true"
                   >
                     <span className="inline-block rotate-90 md:rotate-0">→</span>
