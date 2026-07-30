@@ -34,7 +34,7 @@ function ProblemSection() {
           >
             {problem.sequence.map((step, index) => (
               <Fragment key={step}>
-                <li className="grid min-h-20 min-w-0 grid-rows-[auto_1fr] gap-y-2">
+                <li className="grid min-h-20 min-w-0 grid-rows-[1rem_1fr] gap-y-2">
                   <span className="text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -45,10 +45,13 @@ function ProblemSection() {
 
                 {index < problem.sequence.length - 1 && (
                   <li
-                    className="flex min-h-8 items-center justify-center text-xs text-slate-600 md:min-h-20"
+                    className="flex min-h-8 items-center justify-center text-xs text-slate-600 md:grid md:min-h-20 md:grid-rows-[1rem_1fr] md:items-stretch md:gap-y-2"
                     aria-hidden="true"
                   >
-                    <span className="inline-block rotate-90 md:rotate-0">→</span>
+                    <span className="hidden md:block" />
+                    <span className="inline-block rotate-90 md:flex md:h-5 md:items-center md:justify-center md:rotate-0">
+                      →
+                    </span>
                   </li>
                 )}
               </Fragment>
