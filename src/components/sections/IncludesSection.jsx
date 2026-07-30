@@ -28,29 +28,94 @@ function IncludesSection() {
           </p>
         </div>
 
-        <div className="mt-14 divide-y divide-white/[0.08] border-y border-white/[0.08]">
-          {includes.groups.map((group, index) => (
-            <article
-              className="grid grid-cols-1 items-start gap-y-3 py-7 lg:grid-cols-[3rem_13rem_minmax(0,1fr)_minmax(15rem,auto)] lg:gap-x-8 lg:gap-y-0"
-              key={group.title}
-            >
+        <div className="mx-auto mt-14 w-full max-w-6xl divide-y divide-white/[0.08] overflow-hidden rounded-3xl border border-white/[0.1] bg-black">
+          <article className="grid items-center gap-8 px-6 py-8 sm:px-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14 lg:px-10 lg:py-10">
+            <div className="grid gap-3">
               <span className="text-[0.66rem] font-semibold text-cyan-200/90">
-                {String(index + 1).padStart(2, "0")}
+                01
               </span>
               <h3 className="text-base font-semibold text-slate-50">
-                {group.title}
+                {includes.groups[0].title}
               </h3>
               <p className="text-sm leading-6 text-slate-400">
-                {group.description}
+                {includes.groups[0].description}
               </p>
-              <p className="text-xs font-medium leading-5 text-slate-200 lg:text-right">
-                {group.items.join(" · ")}
+            </div>
+
+            <div
+              aria-hidden="true"
+              className="grid gap-5"
+            >
+              <div className="grid gap-3">
+                <span className="h-2 w-2/3 rounded-full bg-slate-100/70" />
+                <span className="h-px w-full bg-white/[0.12]" />
+                <span className="h-px w-4/5 bg-white/[0.08]" />
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                <span className="h-12 rounded-lg bg-white/[0.055]" />
+                <span className="h-12 rounded-lg bg-white/[0.04]" />
+                <span className="hidden h-12 rounded-lg bg-white/[0.03] sm:block" />
+              </div>
+            </div>
+          </article>
+
+          <article className="grid items-center gap-8 px-6 py-8 sm:px-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14 lg:px-10 lg:py-10">
+            <div className="grid gap-3">
+              <span className="text-[0.66rem] font-semibold text-cyan-200/90">
+                02
+              </span>
+              <h3 className="text-base font-semibold text-slate-50">
+                {includes.groups[1].title}
+              </h3>
+              <p className="text-sm leading-6 text-slate-400">
+                {includes.groups[1].description}
               </p>
-            </article>
-          ))}
+            </div>
+
+            <div
+              aria-hidden="true"
+              className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4"
+            >
+              <span className="h-px w-full bg-white/[0.1]" />
+              <span className="h-10 w-28 rounded-lg bg-cyan-300" />
+              <span className="h-px w-full bg-cyan-300/30" />
+            </div>
+          </article>
+
+          <article className="grid items-center gap-8 px-6 py-8 sm:px-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14 lg:px-10 lg:py-10">
+            <div className="grid gap-3">
+              <span className="text-[0.66rem] font-semibold text-cyan-200/90">
+                03
+              </span>
+              <h3 className="text-base font-semibold text-slate-50">
+                {includes.groups[2].title}
+              </h3>
+              <p className="text-sm leading-6 text-slate-400">
+                {includes.groups[2].description}
+              </p>
+            </div>
+
+            <div
+              aria-hidden="true"
+              className="grid gap-3"
+            >
+              <div className="grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-3">
+                <span className="h-px bg-cyan-300/35" />
+                <span className="h-8 w-full rounded-md bg-white/[0.055]" />
+              </div>
+              <div className="grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-3">
+                <span className="h-px bg-white/[0.1]" />
+                <span className="h-8 w-4/5 rounded-md bg-white/[0.04]" />
+              </div>
+              <div className="grid grid-cols-[2rem_minmax(0,1fr)] items-center gap-3">
+                <span className="h-px bg-white/[0.07]" />
+                <span className="h-8 w-3/5 rounded-md bg-white/[0.03]" />
+              </div>
+            </div>
+          </article>
         </div>
 
-        <div className="flex justify-end">
+        <div className="mx-auto flex max-w-6xl justify-center">
           <Button
             as={Link}
             to="/packs"
