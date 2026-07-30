@@ -85,23 +85,25 @@ export const siteConfig = {
     eyebrow: "QUÉ INCLUYE",
     title: "Lo esencial para que tu negocio se entienda rápido.",
     description:
-      "Una landing simple no tiene que tener mil secciones. Tiene que ordenar lo importante: qué ofrecés, cómo te encuentran y cómo pueden contactarte.",
+      "Una landing reúne lo necesario para que una persona entienda tu negocio y sepa cómo contactarte.",
     cta: "Ver servicios y packs",
     groups: [
       {
-        title: "Contenido",
-        description: "Lo que una persona necesita entender antes de consultar.",
+        title: "Contenido claro",
+        description:
+          "Qué ofrecés, cómo trabajás y qué necesita saber el cliente.",
         items: ["Servicios", "Fotos", "Preguntas frecuentes"],
       },
       {
-        title: "Contacto",
-        description: "Los caminos claros para encontrarte y escribirte.",
+        title: "Contacto directo",
+        description: "Caminos visibles para encontrarte y escribirte.",
         items: ["WhatsApp", "Redes", "Ubicación"],
       },
       {
-        title: "Experiencia",
-        description: "Una navegación simple, clara y pensada para celular.",
-        items: ["Diseño adaptable a celular", "Claridad visual"],
+        title: "Experiencia simple",
+        description:
+          "Una navegación clara que funciona bien en cualquier pantalla.",
+        items: ["Diseño responsive", "Claridad visual"],
       },
     ],
   },
