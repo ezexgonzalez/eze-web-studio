@@ -28,7 +28,6 @@ export const siteConfig = {
     description:
       "Si tu información está dispersa en redes, una landing clara puede ayudarte a mostrar tus servicios, generar más confianza y facilitar el contacto.",
     primaryCta: "Quiero mejorar mi presencia online",
-    secondaryCta: "Ver qué incluye",
   },
 
   previewItems: [
@@ -79,33 +78,6 @@ export const siteConfig = {
       center: "La landing organiza",
       result: "Consulta por WhatsApp",
     },
-  },
-
-  includes: {
-    eyebrow: "QUÉ INCLUYE",
-    title: "Lo esencial para que tu negocio se entienda rápido.",
-    description:
-      "Una landing reúne lo necesario para que una persona entienda tu negocio y sepa cómo contactarte.",
-    cta: "Ver servicios y packs",
-    groups: [
-      {
-        title: "Contenido claro",
-        description:
-          "Qué ofrecés, cómo trabajás y qué necesita saber el cliente.",
-        items: ["Servicios", "Fotos", "Preguntas frecuentes"],
-      },
-      {
-        title: "Contacto directo",
-        description: "Caminos visibles para encontrarte y escribirte.",
-        items: ["WhatsApp", "Redes", "Ubicación"],
-      },
-      {
-        title: "Experiencia simple",
-        description:
-          "Una navegación clara que funciona bien en cualquier pantalla.",
-        items: ["Diseño responsive", "Claridad visual"],
-      },
-    ],
   },
 
   about: {

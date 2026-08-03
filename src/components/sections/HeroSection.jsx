@@ -135,18 +135,6 @@ function HeroSection() {
                   <RiWhatsappFill aria-hidden="true" className="h-5 w-5 shrink-0" />
                   Hablemos por WhatsApp
                 </a>
-                <a
-                  className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.018] px-6 py-3 text-sm font-semibold text-slate-300/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.032)] transition-[background-color,border-color,color,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-white/[0.14] hover:bg-white/[0.045] hover:text-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-300 sm:w-auto"
-                  href="#servicios"
-                >
-                  Ver demos
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform duration-300 ease-out group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </a>
               </div>
             </div>
 
