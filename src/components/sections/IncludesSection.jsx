@@ -16,16 +16,14 @@ import Reveal from "../ui/Reveal";
 
 function StageHeader({ description, number, title }) {
   return (
-    <div className="grid grid-rows-[auto_auto] xl:grid-rows-[2rem_2rem_5.75rem]">
-      <div className="flex items-center gap-3 xl:contents">
-        <span className="text-sm font-semibold text-cyan-200/90 xl:row-start-1">
-          {number}
-        </span>
-        <h3 className="text-base font-semibold text-slate-50 xl:row-start-2">
-          {title}
-        </h3>
-      </div>
-      <p className="mt-2 text-sm leading-6 text-slate-400 xl:row-start-3 xl:mt-0">
+    <div className="grid grid-cols-[auto_minmax(0,1fr)] grid-rows-[auto_auto] gap-x-3 xl:grid-cols-1 xl:grid-rows-[2rem_2rem_5.75rem] xl:gap-x-0">
+      <span className="col-start-1 row-start-1 text-sm font-semibold text-cyan-200/90 xl:col-start-1 xl:row-start-1">
+        {number}
+      </span>
+      <h3 className="col-start-2 row-start-1 text-base font-semibold text-slate-50 xl:col-start-1 xl:row-start-2">
+        {title}
+      </h3>
+      <p className="col-span-2 row-start-2 mt-2 text-sm leading-6 text-slate-400 xl:col-span-1 xl:row-start-3 xl:mt-0">
         {description}
       </p>
     </div>
@@ -34,27 +32,43 @@ function StageHeader({ description, number, title }) {
 
 function MobileStageRail() {
   return (
-    <div className="grid h-full grid-rows-[1rem_1fr] justify-items-center xl:hidden">
+    <div className="grid h-full grid-rows-[1.5rem_1fr] justify-items-center xl:hidden">
       <span className="h-4 w-4 rounded-full border border-cyan-300/50 bg-cyan-300/10" />
       <span className="h-full w-px bg-cyan-300/25" />
     </div>
   );
 }
 
-function MobileStageGap() {
+function Stage({
+  children,
+  description,
+  number,
+  resourceClassName = "",
+  title,
+  withMobileGap = false,
+}) {
   return (
-    <div className="contents xl:hidden">
-      <div className="flex h-14 justify-center">
-        <span className="h-full w-px bg-cyan-300/25" />
+    <article className="col-span-2 grid grid-cols-subgrid xl:col-span-1 xl:block">
+      <MobileStageRail />
+      <div
+        className={`grid xl:grid-rows-[9.75rem_390px] ${
+          withMobileGap ? "pb-14 xl:pb-0" : ""
+        }`}
+      >
+        <StageHeader
+          description={description}
+          number={number}
+          title={title}
+        />
+        <div className={`mt-5 xl:mt-0 ${resourceClassName}`}>{children}</div>
       </div>
-      <div className="h-14" />
-    </div>
+    </article>
   );
 }
 
 function DesktopConnector() {
   return (
-    <div className="hidden grid-rows-[2rem_2rem_5.75rem] xl:grid">
+    <div className="hidden grid-rows-[2rem_2rem_5.75rem_390px] px-3 xl:grid">
       <div className="row-start-2 grid grid-cols-[1fr_auto] items-center text-cyan-300/70">
         <span className="h-px bg-cyan-300/55" />
         <span className="text-lg leading-none">›</span>
@@ -71,7 +85,7 @@ function LandingMockup() {
   ];
 
   return (
-    <div className="w-full max-w-[360px] overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.025] xl:h-[370px] xl:w-[420px] xl:max-w-none">
+    <div className="w-full max-w-[360px] overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.025] xl:h-[370px] xl:max-w-[420px]">
       <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 border-b border-white/[0.08] px-4 py-3">
         <span className="text-[13px] font-semibold text-slate-50">Tu Marca</span>
         <nav className="flex items-center justify-center gap-3 text-[11px] text-slate-400">
@@ -236,54 +250,39 @@ function IncludesSection() {
           </p>
         </div>
 
-        <div className="mt-[68px] grid grid-cols-[1rem_minmax(0,1fr)] gap-x-4 xl:grid-cols-[420px_96px_312px_96px_232px] xl:justify-center xl:gap-x-0">
-          <div className="contents xl:block">
-            <MobileStageRail />
-            <div>
-              <StageHeader
-                description={includes.groups[0].description}
-                number="01"
-                title={includes.groups[0].title}
-              />
-              <div className="mt-5 xl:mt-0">
-                <LandingMockup />
-              </div>
-            </div>
-          </div>
+        <div className="mt-[68px] grid grid-cols-[24px_minmax(0,1fr)] gap-x-4 xl:grid-cols-[minmax(0,1fr)_96px_minmax(0,1fr)_96px_minmax(0,1fr)] xl:gap-x-0">
+          <Stage
+            description={includes.groups[0].description}
+            number="01"
+            resourceClassName="xl:grid xl:place-items-center"
+            title={includes.groups[0].title}
+            withMobileGap
+          >
+            <LandingMockup />
+          </Stage>
 
-          <MobileStageGap />
           <DesktopConnector />
 
-          <div className="contents xl:block">
-            <MobileStageRail />
-            <div>
-              <StageHeader
-                description={includes.groups[1].description}
-                number="02"
-                title={includes.groups[1].title}
-              />
-              <div className="mt-5 xl:mt-0">
-                <ContactMockup />
-              </div>
-            </div>
-          </div>
+          <Stage
+            description={includes.groups[1].description}
+            number="02"
+            resourceClassName="xl:grid xl:place-items-center"
+            title={includes.groups[1].title}
+            withMobileGap
+          >
+            <ContactMockup />
+          </Stage>
 
-          <MobileStageGap />
           <DesktopConnector />
 
-          <div className="contents xl:block">
-            <MobileStageRail />
-            <div>
-              <StageHeader
-                description={includes.groups[2].description}
-                number="03"
-                title={includes.groups[2].title}
-              />
-              <div className="mt-5 grid xl:mt-0">
-                <PhoneMockup />
-              </div>
-            </div>
-          </div>
+          <Stage
+            description={includes.groups[2].description}
+            number="03"
+            resourceClassName="grid xl:place-items-center"
+            title={includes.groups[2].title}
+          >
+            <PhoneMockup />
+          </Stage>
         </div>
 
         <div className="mt-14 flex justify-center xl:mt-16">
