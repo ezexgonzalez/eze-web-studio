@@ -12,28 +12,28 @@ const mobileSteps = [
   {
     icon: FiInstagram,
     itemClassName:
-      "col-start-1 col-end-10 row-start-1 rotate-[-3deg] border-cyan-300/[0.18] bg-black/70 shadow-[0_0_24px_rgba(34,211,238,0.055)]",
+      "col-start-1 col-end-10 row-start-1 rotate-[-3deg] border-cyan-300/[0.18] bg-black/70 shadow-[0_0_28px_rgba(34,211,238,0.10)]",
     numberClassName: "text-cyan-200/90",
     iconClassName: "text-cyan-200/45",
   },
   {
     icon: FiGrid,
     itemClassName:
-      "col-start-3 col-end-12 row-start-2 rotate-[4deg] border-cyan-100/[0.1] bg-black/65",
+      "col-start-3 col-end-12 row-start-2 rotate-[4deg] border-white/[0.10] bg-black/65 shadow-none",
     numberClassName: "text-cyan-200/85",
     iconClassName: "text-slate-300/35",
   },
   {
     icon: FiMessageCircle,
     itemClassName:
-      "col-start-1 col-end-10 row-start-3 rotate-[-4deg] border-cyan-300/[0.18] bg-black/70 shadow-[0_0_24px_rgba(34,211,238,0.055)]",
+      "col-start-1 col-end-10 row-start-3 rotate-[-4deg] border-cyan-300/[0.18] bg-black/70 shadow-[0_0_28px_rgba(34,211,238,0.10)]",
     numberClassName: "text-cyan-200/90",
     iconClassName: "text-cyan-200/45",
   },
   {
     icon: FiUserX,
     itemClassName:
-      "col-start-4 col-end-12 row-start-4 rotate-[5deg] border-rose-300/[0.22] bg-rose-950/[0.08] shadow-[0_0_24px_rgba(251,113,133,0.07)]",
+      "col-start-4 col-end-12 row-start-4 rotate-[5deg] border-rose-300/[0.28] bg-rose-950/[0.10] shadow-[0_0_30px_rgba(244,63,94,0.12)]",
     numberClassName: "text-rose-200/90",
     iconClassName: "text-rose-200/45",
   },
@@ -68,31 +68,31 @@ function ProblemSection() {
           <div className="relative mt-8 w-full md:hidden">
             <span
               aria-hidden="true"
-              className="absolute right-[5%] top-[18%] z-0 h-1.5 w-11 rounded-full bg-cyan-200/[0.045]"
+              className="absolute right-[2%] top-[5.6rem] z-0 h-1.5 w-9 rounded-full bg-cyan-200/[0.045]"
             />
             <span
               aria-hidden="true"
-              className="absolute right-[17%] top-[27%] z-0 h-1 w-6 rounded-full bg-slate-200/[0.035]"
+              className="absolute right-[13%] top-[6.35rem] z-0 h-1 w-6 rounded-full bg-slate-200/[0.035]"
             />
             <span
               aria-hidden="true"
-              className="absolute left-[1%] top-[39%] z-0 h-2 w-8 rounded-full bg-cyan-200/[0.055]"
+              className="absolute left-[1%] top-[12.85rem] z-0 h-2 w-8 rounded-full bg-cyan-200/[0.055]"
             />
             <span
               aria-hidden="true"
-              className="absolute left-[10%] top-[48%] z-0 h-1 w-5 rounded-full bg-slate-200/[0.025]"
+              className="absolute left-[11%] top-[13.6rem] z-0 h-1 w-5 rounded-full bg-slate-200/[0.025]"
             />
             <span
               aria-hidden="true"
-              className="absolute right-[7%] top-[67%] z-0 h-1.5 w-9 rounded-full bg-cyan-200/[0.04]"
+              className="absolute right-[2%] top-[20.1rem] z-0 h-1.5 w-10 rounded-full bg-cyan-200/[0.04]"
             />
             <span
               aria-hidden="true"
-              className="absolute left-[2%] top-[78%] z-0 h-1 w-7 rounded-full bg-slate-200/[0.03]"
+              className="absolute left-[2%] top-[20.85rem] z-0 h-1 w-7 rounded-full bg-slate-200/[0.03]"
             />
 
             <ol
-              className="relative z-10 grid grid-cols-12 grid-rows-[repeat(4,5.25rem)] gap-y-3 px-1"
+              className="relative z-10 grid grid-cols-12 grid-rows-[repeat(4,5.25rem)] gap-y-[34px] px-1"
               aria-label="Recorrido del problema"
             >
               {problem.sequence.map((step, index) => {
@@ -106,6 +106,7 @@ function ProblemSection() {
                 return (
                   <li
                     className={`grid h-full grid-cols-[minmax(0,1fr)_auto] items-center rounded-[1.5rem] border px-4 py-3 ${itemClassName}`}
+                    data-mobile-problem-step={index + 1}
                     key={step}
                   >
                     <div className="min-w-0">
