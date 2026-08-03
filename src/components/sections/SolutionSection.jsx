@@ -41,16 +41,16 @@ function SolutionSection() {
           </div>
 
           <div
-            className="mx-auto mt-7 w-full max-w-[340px] md:hidden"
+            className="mx-auto mt-7 w-[86%] max-w-[340px] md:hidden"
             data-solution-mobile-flow
           >
             <p className="text-center text-sm text-slate-300">
               {solution.flow.inputs[0]}
             </p>
 
-            <div className="relative mt-3 h-[322px] w-full">
-              <div className="grid h-10 w-full grid-cols-4 items-start gap-4 px-3" aria-hidden="true">
-                <div className="flex h-7 w-12 translate-y-2 justify-self-center flex-col justify-center gap-1 rounded-md border border-white/[0.16] bg-slate-950 px-2">
+            <div className="relative mt-2 h-[328px] w-full">
+              <div className="grid h-10 w-full grid-cols-[48px_48px_54px_38px] items-start justify-between px-1" aria-hidden="true">
+                <div className="flex h-7 w-12 translate-y-1.5 flex-col justify-center gap-1 rounded-md border border-white/[0.16] bg-slate-950 px-2">
                   <span className="h-px w-7 bg-white/25" />
                   <span className="flex items-center gap-1">
                     <span className="h-px w-4 bg-white/15" />
@@ -58,28 +58,39 @@ function SolutionSection() {
                   </span>
                 </div>
 
-                <div className="flex h-9 w-12 justify-self-center items-center justify-center rounded-md border border-white/[0.16] bg-slate-950 text-slate-500">
+                <div className="flex h-9 w-12 items-center justify-center rounded-md border border-white/[0.16] bg-slate-950 text-slate-500">
                   <FiImage className="h-4 w-4" />
                 </div>
 
-                <div className="relative flex h-8 w-12 translate-y-0.5 justify-self-center items-center justify-center rounded-md border border-white/[0.14] bg-slate-950 text-slate-500">
+                <div className="relative flex h-8 w-[54px] translate-y-0.5 items-center justify-center rounded-md border border-white/[0.14] bg-slate-950 px-2 text-slate-500">
                   <FiMoreHorizontal className="h-4 w-4" />
-                  <span className="absolute bottom-1.5 right-1.5 h-0.5 w-2.5 rounded-full bg-cyan-300/45" />
+                  <span className="absolute left-2 top-1.5 h-px w-3 rounded-full bg-white/15" />
+                  <span className="absolute bottom-1.5 right-2 h-0.5 w-3 rounded-full bg-cyan-300/45" />
                 </div>
 
-                <div className="flex h-9 w-9 translate-y-2 justify-self-center items-center justify-center rounded-full border border-white/[0.1] bg-slate-800/40 text-slate-400">
+                <div className="flex h-[38px] w-[38px] translate-y-1.5 items-center justify-center rounded-full border border-white/[0.1] bg-slate-800/40 text-slate-400">
                   <FiUser className="h-4 w-4" />
                 </div>
               </div>
 
-              <div className="absolute left-1/2 top-7 h-11 w-[270px] -translate-x-1/2 overflow-hidden" aria-hidden="true">
-                <span className="absolute bottom-0 right-1/2 h-10 w-[132px] origin-bottom-right -rotate-[5deg] rounded-[50%] border-b border-cyan-300/20" />
-                <span className="absolute bottom-0 left-1/2 h-10 w-[132px] origin-bottom-left rotate-[5deg] rounded-[50%] border-b border-cyan-300/20" />
-                <span className="absolute bottom-0 right-1/2 h-9 w-[74px] origin-bottom-right rotate-[7deg] rounded-[50%] border-b border-cyan-300/25" />
-                <span className="absolute bottom-0 left-1/2 h-9 w-[74px] origin-bottom-left -rotate-[7deg] rounded-[50%] border-b border-cyan-300/25" />
-              </div>
+              <svg
+                className="absolute left-1/2 top-7 h-[50px] w-full -translate-x-1/2 overflow-visible"
+                viewBox="0 0 292 52"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path d="M28 2 C48 17 72 39 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.58" strokeWidth="1" strokeLinecap="round" />
+                <path d="M108 2 C116 18 130 40 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
+                <path d="M191 2 C183 18 163 40 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
+                <path d="M269 2 C246 17 222 39 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.58" strokeWidth="1" strokeLinecap="round" />
+                <circle cx="28" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
+                <circle cx="108" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
+                <circle cx="191" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
+                <circle cx="269" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
+              </svg>
 
-              <div className="absolute left-1/2 top-[68px] grid h-[200px] w-[190px] -translate-x-1/2 grid-rows-[22px_42px_38px_54px_1fr] rounded-[0.9rem] border border-white/[0.24] bg-black/90 p-2 shadow-[0_0_28px_rgba(34,211,238,0.08)]">
+              <div className="absolute left-1/2 top-[76px] grid h-[200px] w-[182px] -translate-x-1/2 grid-rows-[22px_42px_38px_54px_1fr] rounded-[0.9rem] border border-white/[0.24] bg-black/90 p-2 shadow-[0_0_28px_rgba(34,211,238,0.08)]">
                 <div className="flex items-start justify-between px-1 pt-0.5 text-slate-500">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300/80" />
                   <FiMenu className="h-3.5 w-3.5" />
@@ -120,7 +131,7 @@ function SolutionSection() {
                 </div>
               </div>
 
-              <div className="absolute inset-x-0 top-[280px] flex flex-col items-center gap-1.5 text-center">
+              <div className="absolute inset-x-0 top-[286px] flex flex-col items-center gap-1.5 text-center">
                 <FiArrowDown className="h-4 w-4 text-cyan-300/65" aria-hidden="true" />
                 <p className="text-sm leading-5 text-slate-300">{solution.flow.result}</p>
               </div>
