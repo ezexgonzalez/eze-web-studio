@@ -58,14 +58,14 @@ function SolutionSection() {
                 preserveAspectRatio="xMidYMid meet"
                 aria-hidden="true"
               >
-                <path d="M142 236 C174 300 224 372 276 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="1" strokeOpacity="0.62" strokeLinecap="round" />
-                <path d="M330 205 C338 280 350 356 362 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="1" strokeOpacity="0.62" strokeLinecap="round" />
-                <path d="M548 212 C526 286 487 360 448 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="1" strokeOpacity="0.62" strokeLinecap="round" />
-                <path d="M704 236 C674 303 602 372 534 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="1" strokeOpacity="0.62" strokeLinecap="round" />
-                <circle cx="142" cy="236" r="2" fill="rgb(34 211 238)" />
-                <circle cx="330" cy="205" r="2" fill="rgb(34 211 238)" />
-                <circle cx="548" cy="212" r="2" fill="rgb(34 211 238)" />
-                <circle cx="704" cy="236" r="2" fill="rgb(34 211 238)" />
+                <path d="M142 236 C174 300 224 372 276 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="6" strokeOpacity="0.62" strokeLinecap="round" />
+                <path d="M330 205 C338 280 350 356 362 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="6" strokeOpacity="0.62" strokeLinecap="round" />
+                <path d="M548 212 C526 286 487 360 448 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="6" strokeOpacity="0.62" strokeLinecap="round" />
+                <path d="M704 236 C674 303 602 372 534 405" fill="none" stroke="rgb(34 211 238)" strokeWidth="6" strokeOpacity="0.62" strokeLinecap="round" />
+                <circle cx="142" cy="236" r="5" fill="rgb(34 211 238)" />
+                <circle cx="330" cy="205" r="5" fill="rgb(34 211 238)" />
+                <circle cx="548" cy="212" r="5" fill="rgb(34 211 238)" />
+                <circle cx="704" cy="236" r="5" fill="rgb(34 211 238)" />
               </svg>
 
               <div
