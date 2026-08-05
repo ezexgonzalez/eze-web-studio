@@ -111,7 +111,7 @@ function HeroSection() {
                 <span className="lg:whitespace-nowrap">
                   para recibir{" "}
                   <span className="font-semibold text-white">más</span>
-                </span>
+                </span>{" "}
                 <br className="hidden lg:block" />
                 <span className="font-semibold text-white">consultas</span>
               </h1>
