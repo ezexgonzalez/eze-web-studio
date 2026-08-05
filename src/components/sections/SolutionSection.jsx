@@ -48,57 +48,59 @@ function SolutionSection() {
               {solution.flow.inputs[0]}
             </p>
 
-            <div className="relative mt-2 h-[328px] w-full">
-              <div className="grid h-10 w-full grid-cols-[48px_48px_54px_38px] items-start justify-between px-1" aria-hidden="true">
-                <div className="flex h-7 w-12 translate-y-1.5 flex-col justify-center gap-1 rounded-md border border-white/[0.16] bg-slate-950 px-2">
-                  <span className="h-px w-7 bg-white/25" />
-                  <span className="flex items-center gap-1">
-                    <span className="h-px w-4 bg-white/15" />
-                    <span className="h-1 w-1 rounded-full bg-cyan-300/70" />
-                  </span>
-                </div>
+            <div className="mt-2 w-full">
+              <div className="relative h-[92px] w-full">
+                <svg
+                  className="absolute inset-x-0 top-0 z-0 h-[92px] w-full"
+                  viewBox="0 0 320 92"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path d="M40 40 C58 61 86 81 114 92" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
+                  <path d="M120 34 C126 57 136 77 145 92" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
+                  <path d="M200 38 C193 59 184 79 175 92" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
+                  <path d="M290 40 C268 63 235 82 206 92" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
+                  <circle cx="40" cy="40" r="2" fill="rgb(34 211 238)" />
+                  <circle cx="120" cy="34" r="2" fill="rgb(34 211 238)" />
+                  <circle cx="200" cy="38" r="2" fill="rgb(34 211 238)" />
+                  <circle cx="290" cy="40" r="2" fill="rgb(34 211 238)" />
+                </svg>
 
-                <div className="flex h-9 w-12 items-center justify-center rounded-md border border-white/[0.16] bg-slate-950 text-slate-500">
-                  <FiImage className="h-4 w-4" />
-                </div>
+                <div className="relative z-10 grid h-12 w-full grid-cols-12 grid-rows-[10px_38px]">
+                  <div className="col-start-1 col-end-4 row-start-2 flex h-7 w-11 justify-self-start flex-col justify-center gap-1 rounded-md border border-white/[0.1] bg-white/[0.035] px-2 text-slate-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]">
+                    <span className="h-px w-6 bg-white/20" />
+                    <span className="flex items-center gap-1">
+                      <span className="h-px w-3.5 bg-white/15" />
+                      <span className="h-1 w-1 rounded-full bg-cyan-300/70" />
+                    </span>
+                  </div>
 
-                <div className="relative flex h-8 w-[54px] translate-y-0.5 items-center justify-center rounded-md border border-white/[0.14] bg-slate-950 px-2 text-slate-500">
-                  <FiMoreHorizontal className="h-4 w-4" />
-                  <span className="absolute left-2 top-1.5 h-px w-3 rounded-full bg-white/15" />
-                  <span className="absolute bottom-1.5 right-2 h-0.5 w-3 rounded-full bg-cyan-300/45" />
-                </div>
+                  <div className="col-start-4 col-end-7 row-start-1 row-end-3 flex h-9 w-[42px] justify-self-center items-center justify-center rounded-md border border-white/[0.12] bg-white/[0.035] text-slate-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]">
+                    <FiImage className="h-4 w-4" />
+                  </div>
 
-                <div className="flex h-[38px] w-[38px] translate-y-1.5 items-center justify-center rounded-full border border-white/[0.1] bg-slate-800/40 text-slate-400">
-                  <FiUser className="h-4 w-4" />
+                  <div className="relative col-start-7 col-end-10 row-start-2 flex h-[30px] w-[50px] justify-self-center items-center justify-center rounded-md border border-white/[0.1] bg-white/[0.035] text-slate-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]">
+                    <FiMoreHorizontal className="h-4 w-4" />
+                    <span className="absolute left-2 top-1.5 h-px w-3 bg-white/15" />
+                    <span className="absolute bottom-1.5 right-2 h-0.5 w-3 rounded-full bg-cyan-300/45" />
+                  </div>
+
+                  <div className="col-start-11 col-end-13 row-start-2 flex h-9 w-9 justify-self-end items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.035] text-slate-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]">
+                    <FiUser className="h-4 w-4" />
+                  </div>
                 </div>
               </div>
 
-              <svg
-                className="absolute left-1/2 top-7 h-[50px] w-full -translate-x-1/2 overflow-visible"
-                viewBox="0 0 292 52"
-                fill="none"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path d="M28 2 C48 17 72 39 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.58" strokeWidth="1" strokeLinecap="round" />
-                <path d="M108 2 C116 18 130 40 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
-                <path d="M191 2 C183 18 163 40 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.62" strokeWidth="1" strokeLinecap="round" />
-                <path d="M269 2 C246 17 222 39 146 51" stroke="rgb(34 211 238)" strokeOpacity="0.58" strokeWidth="1" strokeLinecap="round" />
-                <circle cx="28" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
-                <circle cx="108" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
-                <circle cx="191" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
-                <circle cx="269" cy="2" r="2" fill="rgb(34 211 238)" fillOpacity="0.85" />
-              </svg>
-
-              <div className="absolute left-1/2 top-[76px] grid h-[200px] w-[182px] -translate-x-1/2 grid-rows-[22px_42px_38px_54px_1fr] rounded-[0.9rem] border border-white/[0.24] bg-black/90 p-2 shadow-[0_0_28px_rgba(34,211,238,0.08)]">
-                <div className="flex items-start justify-between px-1 pt-0.5 text-slate-500">
+              <div className="mx-auto -mt-px grid aspect-[1/1.28] w-[48%] min-w-[156px] max-w-[164px] grid-rows-[22px_52px_38px_minmax(0,1fr)_32px] rounded-[0.9rem] border border-white/[0.26] bg-gradient-to-b from-white/[0.055] via-slate-950/95 to-black p-2 shadow-[0_0_32px_rgba(34,211,238,0.09),inset_0_1px_0_rgba(255,255,255,0.04)]">
+                <div className="flex items-start justify-between border-b border-white/[0.07] px-1 pt-0.5 text-slate-500">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-300/80" />
                   <FiMenu className="h-3.5 w-3.5" />
                 </div>
 
                 <div className="flex flex-col items-center justify-center gap-2">
                   <span className="h-1 w-[72px] rounded-full bg-white/80" />
-                  <span className="h-1 w-[54px] rounded-full bg-slate-500/55" />
+                  <span className="h-1 w-[52px] rounded-full bg-slate-500/55" />
                   <span className="h-1 w-[26px] rounded-full bg-cyan-300/75" />
                 </div>
 
@@ -115,8 +117,8 @@ function SolutionSection() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-[52px_1fr] items-center gap-3 px-1">
-                  <div className="flex h-9 items-center justify-center rounded-md bg-white/[0.045] text-slate-500">
+                <div className="grid min-h-0 grid-cols-[38px_1fr] items-center gap-2 px-1 pt-1">
+                  <div className="flex h-7 items-center justify-center rounded-md bg-white/[0.045] text-slate-500">
                     <FiImage className="h-4 w-4" />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -125,13 +127,13 @@ function SolutionSection() {
                   </div>
                 </div>
 
-                <div className="flex w-full items-center justify-center gap-1.5 rounded-md bg-cyan-300 px-2 text-[11px] font-semibold text-black">
+                <div className="flex w-full items-center justify-center gap-1.5 rounded-md bg-cyan-300 px-1 text-[11px] font-semibold text-black">
                   <FaWhatsapp className="h-3.5 w-3.5 shrink-0" />
                   <span className="whitespace-nowrap">{solution.flow.result}</span>
                 </div>
               </div>
 
-              <div className="absolute inset-x-0 top-[286px] flex flex-col items-center gap-1.5 text-center">
+              <div className="mt-[10px] flex flex-col items-center gap-1.5 text-center">
                 <FiArrowDown className="h-4 w-4 text-cyan-300/65" aria-hidden="true" />
                 <p className="text-sm leading-5 text-slate-300">{solution.flow.result}</p>
               </div>
