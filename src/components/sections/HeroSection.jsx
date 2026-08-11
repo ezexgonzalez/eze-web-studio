@@ -117,8 +117,9 @@ function HeroSection() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-[42rem] text-[0.98rem] font-normal leading-7 text-slate-200/84 sm:mt-6 sm:text-[1.05rem] sm:leading-8">
-                Diseño sitios modernos para negocios que necesitan verse mejor,
-                explicar rápido qué ofrecen y recibir consultas por WhatsApp.
+                Creo landing pages para negocios que necesitan ordenar su
+                información, explicar qué ofrecen y facilitar el contacto por
+                WhatsApp.
               </p>
 
               <div className="relative mt-7 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row">

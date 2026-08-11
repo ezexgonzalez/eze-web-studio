@@ -66,7 +66,7 @@ export const siteConfig = {
     eyebrow: "LA SOLUCIÓN",
     title: "Una landing ordena todo en un solo lugar.",
     description:
-      "Una página simple puede funcionar como la presentación digital de tu negocio. Muestra lo importante de forma clara y lleva a la persona directo al contacto.",
+      "Una landing reúne la información importante de tu negocio, la presenta de forma ordenada y guía a la persona hasta el contacto.",
     strongPhrase:
       "Menos vueltas para el cliente. Más claridad para tu negocio.",
     flow: {
@@ -75,7 +75,7 @@ export const siteConfig = {
         "Contacto perdido",
         "Cliente confundido",
       ],
-      center: "La landing organiza",
+      center: "La landing reúne y ordena",
       result: "Consulta por WhatsApp",
     },
   },
@@ -86,7 +86,7 @@ export const siteConfig = {
     editorialDescription:
       "Eze Web Studio es un servicio personal de dise\u00f1o y desarrollo web para negocios, profesionales y emprendimientos.",
     editorialSecondaryText:
-      "Trabajo de forma directa, cuidando la estructura, el dise\u00f1o y la experiencia visual para que cada web sea clara, \u00fatil y f\u00e1cil de consultar.",
+      "Trabajo de forma directa, desde la organizaci\u00f3n del contenido hasta la publicaci\u00f3n, para que el resultado sea \u00fatil y f\u00e1cil de consultar.",
     principles:
       "Dise\u00f1o con criterio \u00b7 Trato directo \u00b7 Webs simples y \u00fatiles",
     eyebrow: "SOBRE EZE WEB STUDIO",
@@ -94,14 +94,14 @@ export const siteConfig = {
 
   packsPage: {
     eyebrow: "PACKS",
-    title: "Servicios pensados para empezar simple.",
+    title: "Tres formas de empezar, según lo que necesite tu negocio.",
     description:
-      "Elegí el punto de partida según lo que necesita tu negocio. La idea es crear una web clara, profesional y fácil de consultar.",
+      "Podés crear una landing desde cero o mejorar la web que ya tenés. Elegimos el punto de partida según las necesidades de tu proyecto.",
     items: [
       {
         title: "Pack Presencia",
         subtitle:
-          "Para negocios que necesitan una página clara y profesional.",
+          "Para mostrar lo esencial de tu negocio y facilitar el contacto.",
         includes: [
           "Landing de una página",
           "Diseño adaptable a celular",
@@ -117,16 +117,16 @@ export const siteConfig = {
       {
         title: "Pack Profesional",
         subtitle:
-          "Para negocios que quieren una presencia más completa.",
+          "Para sumar más contenido, secciones y formas de contacto.",
         includes: [
           "Landing personalizada",
-          "Hasta 5 o 6 secciones",
+          "Hasta 6 secciones",
           "Galería de imágenes",
           "Testimonios o trabajos realizados",
           "Preguntas frecuentes",
           "Formulario de contacto",
           "Google Maps",
-          "SEO básico",
+          "Configuración básica para buscadores",
           "2 rondas de ajustes",
         ],
         cta: "Consultar Pack Profesional",
@@ -135,14 +135,14 @@ export const siteConfig = {
       {
         title: "Pack Optimización",
         subtitle:
-          "Para negocios que ya tienen web, pero quieren mejorarla.",
+          "Para mejorar una web existente sin empezar de cero.",
         includes: [
           "Diagnóstico visual y funcional",
           "Mejora de estructura",
-          "Rediseño responsive",
+          "Adaptación a celular y otras pantallas",
           "Mejora de textos",
           "Botones de contacto claros",
-          "Optimización básica",
+          "Revisión técnica básica",
         ],
         cta: "Consultar Optimización",
       },
@@ -152,7 +152,7 @@ export const siteConfig = {
       title: "Aclaraciones importantes antes de avanzar.",
       items: [
         {
-          title: "Cómo se define",
+          title: "Cómo se prepara la propuesta",
           text: "Los packs funcionan como punto de partida. Después de conocer tu negocio y revisar qué necesitás mostrar, te paso una propuesta clara con alcance, tiempos y valor.",
         },
         {
@@ -161,7 +161,7 @@ export const siteConfig = {
         },
         {
           title: "Qué no está incluido",
-          text: "Los packs no incluyen dominio, hosting pago externo, sesiones de fotos ni sistemas complejos. Si necesitás algo extra, se puede evaluar aparte.",
+          text: "Los packs no incluyen dominio, planes de hosting pagos, sesiones de fotos ni sistemas complejos. Cualquier necesidad adicional se cotiza por separado.",
         },
       ],
     },
@@ -195,12 +195,12 @@ export const siteConfig = {
       {
         title: "Desarrollamos",
         description:
-          "Construyo la página con una estructura funcional y prolija.",
+          "Construyo la página y dejo listas sus secciones, botones y enlaces para revisar.",
       },
       {
         title: "Ajustamos",
         description:
-          "Revisamos detalles y hacemos correcciones necesarias.",
+          "Revisamos los detalles y hacemos las correcciones necesarias.",
       },
       {
         title: "Publicamos",
@@ -210,12 +210,12 @@ export const siteConfig = {
     ],
     finalCta: {
       text: "El objetivo no es complicarte con tecnología. Es ordenar tu presencia online y dejarte una web clara para compartir.",
-      buttonLabel: "Quiero empezar",
+      buttonLabel: "Consultar mi proyecto",
     },
   },
 
   faqPage: {
-    eyebrow: "FAQ",
+    eyebrow: "DUDAS COMUNES",
     title: "Preguntas frecuentes",
     description: "Algunas dudas comunes antes de crear una landing.",
     items: [
@@ -232,7 +232,7 @@ export const siteConfig = {
       {
         question: "¿La página funciona en celular?",
         answer:
-          "Sí. Las landings están pensadas primero para celular, porque la mayoría de personas llegan desde redes sociales.",
+          "Sí. La página se adapta a celular, tablet y computadora para que pueda consultarse correctamente desde cualquier pantalla.",
       },
       {
         question: "¿Necesito tener textos y fotos?",
@@ -242,17 +242,17 @@ export const siteConfig = {
       {
         question: "¿Hacés tiendas online o sistemas complejos?",
         answer:
-          "Por ahora el foco está en páginas simples, claras y profesionales. Si necesitás algo más complejo, podemos evaluarlo.",
+          "No es el servicio principal. El foco está en landing pages y sitios simples. Si tu proyecto requiere algo más complejo, primero hay que evaluar el alcance.",
       },
       {
         question: "¿Cuánto tarda una landing?",
         answer:
-          "Depende del contenido y del alcance, pero la idea es trabajar con un proceso simple y claro.",
+          "El plazo depende del alcance y de qué tan listo esté el contenido. Antes de empezar, te confirmo una fecha estimada de entrega.",
       },
       {
         question: "¿Puedo pedir cambios?",
         answer:
-          "Sí. Cada pack puede incluir rondas de ajustes para corregir detalles antes de publicar.",
+          "Sí. Cada pack indica cuántas rondas de ajustes incluye para corregir detalles antes de publicar.",
       },
     ],
   },
@@ -264,18 +264,18 @@ export const siteConfig = {
     email: "ezewebstudio.dev@gmail.com",
     instagramUrl: "https://www.instagram.com/ezewebstudio",
     eyebrow: "CONTACTO",
-    title: "¿Querés mejorar la presencia online de tu negocio?",
+    title: "Hablemos de la web que necesita tu negocio.",
     description:
       "Escribime y contame qué hacés, qué querés mostrar y qué te gustaría mejorar. Vemos si una landing puede ayudarte.",
     primaryCta: "Escribirme por WhatsApp",
-    secondaryCta: "Enviar DM por Instagram",
+    secondaryCta: "Escribirme por Instagram",
     guide:
-      "Para consultar, podés mandarme: nombre del negocio, rubro, Instagram o red actual y qué te gustaría mejorar.",
+      "Para consultar, podés enviarme el nombre y el rubro de tu negocio, su Instagram o red principal, y qué te gustaría mejorar.",
   },
 
   footer: {
     description:
-      "Webs simples, modernas y claras para negocios que quieren verse más profesionales online.",
-    finalText: "Diseño claro. Código limpio. Presencia digital con criterio.",
+      "Landing pages para explicar mejor tu negocio y facilitar el contacto.",
+    finalText: "Diseño web con criterio y trato directo de principio a fin.",
   },
 };
