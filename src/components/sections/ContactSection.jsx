@@ -56,7 +56,7 @@ function ContactSection() {
           </div>
 
           <div className="mt-8 rounded-2xl border border-white/[0.08] bg-black/[0.24] p-4 sm:p-5">
-            <p className="text-sm leading-6 text-slate-300">{contact.guide}</p>
+            <p className="text-base leading-7 text-slate-300 sm:text-sm sm:leading-6">{contact.guide}</p>
           </div>
         </div>
       </Reveal>

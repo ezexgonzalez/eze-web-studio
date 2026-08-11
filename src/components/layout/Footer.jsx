@@ -17,7 +17,7 @@ function Footer() {
           <p className="text-sm font-semibold tracking-wide text-slate-50">
             {brandName}
           </p>
-          <p className="mt-3 text-sm leading-6 text-slate-400">
+          <p className="mt-3 text-base leading-7 text-slate-400 sm:text-sm sm:leading-6">
             {footer.description}
           </p>
         </div>
@@ -36,7 +36,7 @@ function Footer() {
           ))}
         </div>
 
-        <p className="border-t border-white/[0.07] pt-6 text-xs leading-6 text-slate-500 md:col-span-2">
+        <p className="border-t border-white/[0.07] pt-6 text-sm leading-6 text-slate-500 sm:text-xs md:col-span-2">
           {footer.finalText}
         </p>
       </div>
