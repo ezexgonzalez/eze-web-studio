@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { siteConfig } from "../../data/siteConfig";
 import { getContactUrls } from "../../utils/contactUrls";
 import Button from "../ui/Button";
@@ -23,8 +23,32 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const headerRef = useRef(null);
+  const menuButtonRef = useRef(null);
+  const location = useLocation();
   const { nav } = siteConfig;
   const contactUrls = getContactUrls(siteConfig.contact);
+
+  const handleActiveDestination = (event, to) => {
+    const [pathname, hashValue] = to.split("#");
+    const targetPathname = pathname || location.pathname;
+    const targetHash = hashValue ? `#${hashValue}` : "";
+
+    const isAlreadyActive =
+      location.pathname === targetPathname && location.hash === targetHash;
+
+    if (!isAlreadyActive) return;
+
+    event.preventDefault();
+
+    if (targetHash) {
+      document
+        .querySelector(targetHash)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +67,10 @@ function Navbar() {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setIsMobileMenuOpen(false);
+
+        requestAnimationFrame(() => {
+          menuButtonRef.current?.focus();
+        });
       }
     };
 
@@ -82,6 +110,7 @@ function Navbar() {
             aria-label={isMobileMenuOpen ? nav.closeMenuLabel : nav.openMenuLabel}
             className="rounded-full outline-none transition-transform duration-300 ease-out hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200 md:hidden"
             onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+            ref={menuButtonRef}
             type="button"
           >
             <LogoMark />
@@ -109,6 +138,7 @@ function Navbar() {
               to={link.to}
               className="group relative py-1 text-sm font-medium text-slate-400/90 transition-colors duration-300 ease-out hover:text-cyan-100"
               key={link.label}
+              onClick={(event) => handleActiveDestination(event, link.to)}
             >
               {link.label}
               <span className="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 rounded-full bg-cyan-300/80 transition-transform duration-300 ease-out group-hover:scale-x-100" />
@@ -148,7 +178,10 @@ function Navbar() {
                 }`
               }
               key={link.label}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(event) => {
+                handleActiveDestination(event, link.to);
+                setIsMobileMenuOpen(false);
+              }}
               tabIndex={isMobileMenuOpen ? 0 : -1}
               to={link.to}
             >

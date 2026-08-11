@@ -68,6 +68,7 @@ function CategoryStrip() {
         <div className="rubros-marquee flex w-max items-center text-center text-[0.68rem] font-normal leading-5 tracking-[0.018em] text-slate-500/62 sm:text-[0.71rem]">
           {loopedCategories.map((category, index) => (
             <span
+              aria-hidden={index >= categories.length ? "true" : undefined}
               className="inline-flex min-h-6 items-center justify-center gap-8 px-5"
               key={`${category}-${index}`}
             >
