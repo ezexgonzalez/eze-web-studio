@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: "Plus Jakarta Sans", Manrope, Inter, system-ui, sans-serif;
   color: #f8fafc;
   background: #000000;
   font-synthesis: none;
@@ -14,16 +15,23 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   background: #000000;
   color: #f8fafc;
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 @keyframes hero-fade-up {
@@ -36,6 +44,113 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes hero-light-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(4rem, 2.5rem, 0) scale(1.08);
+  }
+
+  to {
+    transform: translate3d(7rem, 4rem, 0) scale(1.16);
+  }
+}
+
+@keyframes hero-light-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+
+  50% {
+    transform: translate3d(-4rem, -2.5rem, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-7rem, -4rem, 0) scale(1.14);
+  }
+}
+
+@keyframes rubros-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translate3d(0, 0, 0) scale(0.82);
+  }
+
+  45% {
+    opacity: 0.35;
+    transform: translate3d(0.35rem, -0.25rem, 0) scale(1);
+  }
+
+  70% {
+    opacity: 0.24;
+    transform: translate3d(-0.2rem, 0.18rem, 0) scale(0.9);
+  }
+}
+
+.hero-light-a {
+  animation: hero-light-drift-a 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-light-b {
+  animation: hero-light-drift-b 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-noise {
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.72) 0 0.7px, transparent 0.85px),
+    radial-gradient(circle at 76% 34%, rgba(255, 255, 255, 0.52) 0 0.6px, transparent 0.8px),
+    radial-gradient(circle at 42% 72%, rgba(255, 255, 255, 0.44) 0 0.65px, transparent 0.85px);
+  background-size:
+    23px 23px,
+    31px 31px,
+    19px 19px;
+}
+
+.rubros-marquee {
+  animation: rubros-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.hero-sparkle {
+  animation: hero-sparkle-twinkle 6.5s ease-in-out infinite;
+  opacity: 0.22;
+}
+
+.hero-sparkle-b {
+  animation-delay: -1.4s;
+  animation-duration: 7.2s;
+}
+
+.hero-sparkle-c {
+  animation-delay: -2.8s;
+  animation-duration: 8s;
+}
+
+.hero-sparkle-d {
+  animation-delay: -4.1s;
+  animation-duration: 6.8s;
+}
+
+.hero-sparkle-e {
+  animation-delay: -5.2s;
+  animation-duration: 7.6s;
 }
 
 .reveal {
@@ -54,6 +169,13 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-light-a,
+  .hero-light-b,
+  .hero-sparkle,
+  .rubros-marquee {
+    animation: none;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;

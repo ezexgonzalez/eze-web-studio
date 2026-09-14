@@ -7,7 +7,7 @@ function AboutSection() {
   return (
     <section
       id="sobre-eze"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-black px-4 py-18 sm:px-6 sm:py-22 lg:px-8 lg:py-24"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-black px-4 pt-9 pb-18 sm:px-6 sm:py-22 lg:px-8 lg:py-24"
     >
       <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/[0.035] blur-3xl" />
