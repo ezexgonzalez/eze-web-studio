@@ -1,16 +1,37 @@
-# React + Vite
+# Eze Web Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing de presentación de Eze Web Studio: un servicio personal de diseño y desarrollo de landing pages para negocios, profesionales y emprendimientos.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- Tailwind CSS
+- React Router
 
-## React Compiler
+## Desarrollo local
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run dev`: inicia el entorno local.
+- `npm run lint`: revisa el código con ESLint.
+- `npm run build`: genera el build de producción.
+- `npm run check`: ejecuta lint y build.
+- `npm run preview`: sirve el build localmente.
+
+## Estructura
+
+- `src/components`: layout, secciones y UI reutilizable.
+- `src/pages`: Home, Packs, Proceso y FAQ.
+- `src/data/siteConfig.js`: contenido y configuración central.
+- `src/utils`: utilidades de enlaces y contacto.
+- `public`: assets públicos, favicon y metadata social.
+
+## Estado
+
+Landing pública en etapa de presentación comercial. Incluye una demo conceptual de gimnasio boutique como proyecto de portfolio.

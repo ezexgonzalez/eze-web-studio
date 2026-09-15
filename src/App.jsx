@@ -1,36 +1,35 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
-import HomePage from './pages/HomePage'
-import PacksPage from './pages/PacksPage'
-import ProcessPage from './pages/ProcessPage'
-import FaqPage from './pages/FaqPage'
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import HomePage from "./pages/HomePage";
+import PacksPage from "./pages/PacksPage";
+import ProcessPage from "./pages/ProcessPage";
+import FaqPage from "./pages/FaqPage";
 
 function ScrollToRouteTarget() {
-  const { hash, pathname } = useLocation()
+  const { hash, pathname } = useLocation();
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: 'auto' })
-      return
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
     }
 
-    const target = document.querySelector(hash)
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }, [hash, pathname])
+    const target = document.querySelector(hash);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash, pathname]);
 
-  return null
+  return null;
 }
 
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Saltar al contenido</a>
       <ScrollToRouteTarget />
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex="-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/packs" element={<PacksPage />} />
@@ -40,7 +39,7 @@ function App() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

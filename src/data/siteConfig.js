@@ -22,12 +22,31 @@ export const siteConfig = {
   },
 
   hero: {
-    eyebrow: "Diseño web para negocios y emprendimientos",
-    title: "Tu negocio puede verse más profesional sin necesitar una web complicada.",
-    highlightedText: "más profesional",
+    title: [
+      [
+        { text: "Landing pages " },
+        { text: "claras", emphasis: true },
+      ],
+      [
+        { text: "para recibir " },
+        { text: "más", emphasis: true },
+      ],
+      [{ text: "consultas", emphasis: true }],
+    ],
     description:
-      "Si tu información está dispersa en redes, una landing clara puede ayudarte a mostrar tus servicios, generar más confianza y facilitar el contacto.",
-    primaryCta: "Quiero mejorar mi presencia online",
+      "Creo landing pages para negocios que necesitan ordenar su información, explicar qué ofrecen y facilitar el contacto por WhatsApp.",
+    primaryCta: "Hablemos por WhatsApp",
+    categories: [
+      "Peluquerías",
+      "Restaurantes",
+      "Psicólogos",
+      "Entrenadores",
+      "Contadores",
+      "Arquitectos",
+      "Abogados",
+      "Gimnasios",
+      "Comercios locales",
+    ],
   },
 
   previewItems: [
@@ -78,6 +97,23 @@ export const siteConfig = {
       center: "La landing reúne y ordena",
       result: "Consulta por WhatsApp",
     },
+  },
+
+  featuredDemo: {
+    eyebrow: "PROYECTO / DEMO",
+    title: "Una landing diseñada para un gimnasio boutique.",
+    description:
+      "Una dirección visual fuerte, navegación clara y una experiencia responsive pensada para que cada visita encuentre el camino hacia la consulta.",
+    disclosure: "Demo conceptual · Proyecto de portfolio",
+    desktopImage: {
+      src: "/gym-demo-desktop.webp",
+      alt: "Vista desktop de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
+    },
+    mobileImage: {
+      src: "/gym-demo-mobile.webp",
+      alt: "Vista mobile de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
+    },
+    liveUrl: null,
   },
 
   about: {

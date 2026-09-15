@@ -1,8 +1,6 @@
 import { siteConfig } from "../data/siteConfig";
 import { getContactUrls } from "../utils/contactUrls";
 import Button from "../components/ui/Button";
-import GlassCard from "../components/ui/GlassCard";
-import InfoCallout from "../components/ui/InfoCallout";
 import PageHero from "../components/ui/PageHero";
 import Reveal from "../components/ui/Reveal";
 
@@ -13,55 +11,33 @@ function ProcessPage() {
 
   return (
     <section className="relative isolate overflow-hidden bg-black px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-36 lg:px-8 lg:pb-28">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_84%_18%,rgba(34,211,238,0.08),transparent_28%),linear-gradient(180deg,#000000_0%,#02040a_100%)]" />
       <div className="absolute inset-x-8 top-28 h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
 
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
-          <PageHero
-            eyebrow={processPage.eyebrow}
-            title={processPage.title}
-            description={processPage.description}
-            layout="split"
-          />
+          <PageHero eyebrow={processPage.eyebrow} title={processPage.title} description={processPage.description} layout="split" />
         </Reveal>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+        <ol className="relative mt-12 border-l border-white/[0.12] pl-7 sm:mt-16 sm:pl-10 lg:pl-14">
           {processPage.steps.map((step, index) => (
-            <Reveal className="h-full" delay={index * 70} key={step.title}>
-              <GlassCard className="group relative overflow-hidden p-5 transition-[border-color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-cyan-300/[0.22] hover:bg-white/[0.048] sm:p-6">
-                <div className="mb-5 flex items-center gap-3">
-                  <span className="text-xs font-semibold text-cyan-200/90">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-px flex-1 rounded-full bg-white/[0.12] transition-colors duration-300 group-hover:bg-cyan-300/[0.36]" />
-                </div>
-                <h2 className="text-lg font-semibold text-slate-50">
-                  {step.title}
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-slate-400">
-                  {step.description}
-                </p>
-              </GlassCard>
+            <Reveal as="li" className="relative grid gap-3 pb-10 last:pb-0 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-8" delay={index * 70} key={step.title}>
+              <span aria-hidden="true" className="absolute -left-[2.1rem] top-1.5 grid h-4 w-4 place-items-center rounded-full border border-cyan-300/70 bg-black sm:-left-[3.15rem]">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+              </span>
+              <span className="text-xs font-semibold tracking-[0.14em] text-cyan-200/90">{String(index + 1).padStart(2, "0")}</span>
+              <div className="max-w-2xl">
+                <h2 className="text-xl font-semibold text-slate-50 sm:text-2xl">{step.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">{step.description}</p>
+              </div>
             </Reveal>
           ))}
-        </div>
+        </ol>
 
         <Reveal delay={120}>
-          <InfoCallout className="mt-8 grid gap-5 p-5 sm:p-6 md:grid-cols-[1fr_auto] md:items-center">
-            <p className="max-w-3xl text-base leading-7 text-slate-200">
-              {finalCta.text}
-            </p>
-            <Button
-              as="a"
-              href={contactUrls.whatsapp}
-              className="w-full md:w-auto"
-              rel="noreferrer"
-              target="_blank"
-            >
-              {finalCta.buttonLabel}
-            </Button>
-          </InfoCallout>
+          <div className="mt-12 flex flex-col gap-5 border-t border-white/[0.1] pt-7 md:flex-row md:items-center md:justify-between">
+            <p className="max-w-3xl text-base leading-7 text-slate-200">{finalCta.text}</p>
+            <Button as="a" href={contactUrls.whatsapp} className="w-full md:w-auto" rel="noreferrer" target="_blank">{finalCta.buttonLabel}</Button>
+          </div>
         </Reveal>
       </div>
     </section>

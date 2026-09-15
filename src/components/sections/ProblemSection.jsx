@@ -12,30 +12,30 @@ const mobileSteps = [
   {
     icon: FiInstagram,
     itemClassName:
-      "col-start-1 col-end-10 row-start-1 rotate-[-3deg] border-cyan-300/[0.18] bg-[linear-gradient(135deg,rgba(8,47,73,0.18),rgba(0,0,0,0.76)_62%)] shadow-[0_0_28px_rgba(34,211,238,0.10)]",
+      "col-start-1 col-end-12 row-start-1 -rotate-1 border-cyan-300/[0.16] bg-white/[0.035]",
     numberClassName: "text-cyan-200/90",
     iconClassName: "text-cyan-200/45",
   },
   {
     icon: FiGrid,
     itemClassName:
-      "col-start-3 col-end-12 row-start-2 rotate-[4deg] border-white/[0.10] bg-[linear-gradient(135deg,rgba(15,23,42,0.12),rgba(0,0,0,0.74)_62%)] shadow-none",
+      "col-start-2 col-end-12 row-start-2 rotate-1 border-white/[0.10] bg-white/[0.025]",
     numberClassName: "text-cyan-200/85",
     iconClassName: "text-slate-300/35",
   },
   {
     icon: FiMessageCircle,
     itemClassName:
-      "col-start-1 col-end-10 row-start-3 rotate-[-4deg] border-cyan-300/[0.18] bg-[linear-gradient(135deg,rgba(8,47,73,0.18),rgba(0,0,0,0.76)_62%)] shadow-[0_0_28px_rgba(34,211,238,0.10)]",
-    numberClassName: "text-cyan-200/90",
-    iconClassName: "text-cyan-200/45",
+      "col-start-1 col-end-11 row-start-3 -rotate-1 border-white/[0.10] bg-white/[0.025]",
+    numberClassName: "text-cyan-200/85",
+    iconClassName: "text-slate-300/35",
   },
   {
     icon: FiUserX,
     itemClassName:
-      "col-start-5 col-end-12 row-start-4 rotate-[5deg] border-rose-300/[0.28] bg-[linear-gradient(135deg,rgba(76,5,25,0.24),rgba(0,0,0,0.80)_64%)] shadow-[0_0_30px_rgba(244,63,94,0.12)]",
-    numberClassName: "text-rose-200/90",
-    iconClassName: "text-rose-200/45",
+      "col-start-2 col-end-12 row-start-4 rotate-1 border-cyan-300/[0.13] bg-white/[0.02]",
+    numberClassName: "text-cyan-200/80",
+    iconClassName: "text-cyan-200/35",
   },
 ];
 
@@ -66,31 +66,6 @@ function ProblemSection() {
           </div>
 
           <div className="relative mt-8 w-full md:hidden">
-            <span
-              aria-hidden="true"
-              className="absolute right-[1%] top-[3.5rem] z-0 h-1.5 w-10 rounded-full bg-cyan-200/[0.045]"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute right-[12%] top-[4.25rem] z-0 h-1 w-6 rounded-full bg-slate-200/[0.035]"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute left-[1%] top-[9rem] z-0 h-2 w-8 rounded-full bg-cyan-200/[0.055]"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute left-[9%] top-[9.8rem] z-0 h-1 w-5 rounded-full bg-slate-200/[0.025]"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute right-[2%] top-[16.2rem] z-0 h-1.5 w-10 rounded-full bg-cyan-200/[0.04]"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute left-[2%] top-[22.4rem] z-0 h-1 w-7 rounded-full bg-slate-200/[0.03]"
-            />
-
             <ol
               className="relative z-10 grid grid-cols-12 grid-rows-[repeat(4,5.25rem)] gap-y-7 px-1"
               aria-label="Recorrido del problema"
