@@ -106,9 +106,11 @@ export const siteConfig = {
       "Una landing moderna y enfocada en la conversión para un gimnasio boutique de entrenamiento funcional.",
     mobileDescription:
       "Landing page para un gimnasio boutique que combina fuerza, funcionalidad y comunidad, con un diseño moderno y orientado a la conversión.",
-    disclosure: "Demo conceptual · Proyecto de portfolio",
-    topRail: "DISEÑO · DESARROLLO · RESULTADOS",
-    bottomRail: "IDEAS QUE HACEN CRECER",
+    desktopTopRail: "DISEÑO • DESARROLLO • RESULTADOS",
+    mobileTopRail: "IDEAS QUE IMPULSAN MARCAS",
+    desktopBottomRail: "IDEAS QUE HACEN CRECER",
+    mobileBottomRail: "ESTRATEGIA • DISEÑO • DESARROLLO • RESULTADOS",
+    desktopEditorial: ["PROYECTOS REALES", "PARA NEGOCIOS REALES"],
     desktopImage: {
       src: "/gym-demo-desktop.webp",
       alt: "Captura desktop de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",

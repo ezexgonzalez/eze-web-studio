@@ -8,12 +8,15 @@ const attributeIcons = {
   identity: FiZap,
 };
 
-function EditorialRail({ children, trailing }) {
+function EditorialRail({ children, desktopTrailing, mobileTrailing }) {
   return (
-    <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-slate-400 sm:gap-7">
+    <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 text-[0.56rem] font-semibold uppercase tracking-[0.2em] text-slate-400 sm:gap-6 lg:text-[0.6rem] lg:tracking-[0.25em]">
       <span className="whitespace-nowrap text-slate-200">{children}</span>
       <span aria-hidden="true" className="h-px bg-white/[0.18]" />
-      <span className="whitespace-nowrap text-right text-slate-500">{trailing}</span>
+      <span className="max-w-36 text-right leading-3 text-slate-500 sm:max-w-44 lg:max-w-none lg:whitespace-nowrap lg:leading-normal">
+        <span className="lg:hidden">{mobileTrailing}</span>
+        <span className="hidden lg:inline">{desktopTrailing}</span>
+      </span>
     </div>
   );
 }
@@ -50,7 +53,7 @@ function MobileFrame({ image }) {
 function BrowserFrame({ image, urlLabel }) {
   return (
     <figure className="overflow-hidden rounded-[0.8rem] border border-slate-300/55 bg-[#0b0e10]">
-      <div className="flex h-8 items-center gap-3 border-b border-white/[0.1] bg-[#13181b] px-3 sm:px-4">
+      <div className="flex h-7 items-center gap-3 border-b border-white/[0.1] bg-[#13181b] px-3 sm:px-4">
         <span aria-hidden="true" className="flex gap-1.5">
           <i className="h-1.5 w-1.5 rounded-full bg-slate-500/80" />
           <i className="h-1.5 w-1.5 rounded-full bg-slate-500/80" />
@@ -78,16 +81,16 @@ function DemoSection() {
   return (
     <section
       id="demo"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-black px-4 py-9 sm:px-6 sm:py-10 lg:px-8 lg:py-10"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-black px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-8"
     >
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
-          <EditorialRail trailing={featuredDemo.topRail}>
+          <EditorialRail desktopTrailing={featuredDemo.desktopTopRail} mobileTrailing={featuredDemo.mobileTopRail}>
             EZE WEB STUDIO
           </EditorialRail>
         </Reveal>
 
-        <Reveal className="mt-7 grid gap-6 lg:mt-8 lg:grid-cols-[1.05fr_0.82fr_0.38fr] lg:items-end lg:gap-8" delay={60}>
+        <Reveal className="mt-6 grid gap-5 lg:grid-cols-[1.05fr_0.82fr_0.38fr] lg:items-end lg:gap-8" delay={60}>
           <div>
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-cyan-200">
               {featuredDemo.projectLabel}
@@ -108,14 +111,14 @@ function DemoSection() {
           <div className="hidden border-l border-white/[0.18] pl-5 lg:block">
             <span aria-hidden="true" className="mb-4 block h-px w-9 bg-cyan-300" />
             <p className="text-[0.65rem] font-medium uppercase leading-5 tracking-[0.2em] text-slate-300">
-              {featuredDemo.disclosure}
+              {featuredDemo.desktopEditorial[0]}
+              <br />
+              {featuredDemo.desktopEditorial[1]}
             </p>
           </div>
         </Reveal>
 
-        <p className="mt-5 text-xs text-slate-500 lg:hidden">{featuredDemo.disclosure}</p>
-
-        <Reveal className="mt-6 lg:mt-7" delay={110}>
+        <Reveal className="mt-5 lg:mt-5" delay={110}>
           <div className="grid grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] items-start gap-4 sm:grid-cols-[minmax(0,0.84fr)_minmax(0,1.16fr)] md:gap-7 lg:hidden">
             <div className="flex min-h-full flex-col">
               <div className="space-y-4">
@@ -141,14 +144,14 @@ function DemoSection() {
             <MobileFrame image={featuredDemo.mobileImage} />
           </div>
 
-          <div className="hidden lg:grid lg:grid-cols-[minmax(0,70%)_minmax(11rem,20%)] lg:justify-between lg:items-start">
+          <div className="hidden lg:grid lg:w-[95%] lg:grid-cols-[minmax(0,1fr)_14.75rem] lg:items-start lg:gap-x-10">
             <BrowserFrame image={featuredDemo.desktopImage} urlLabel={featuredDemo.liveUrlLabel} />
             <MobileFrame image={featuredDemo.mobileImage} />
           </div>
         </Reveal>
 
-        <Reveal className="mt-7 lg:mt-6" delay={150}>
-          <EditorialRail trailing={featuredDemo.bottomRail}>
+        <Reveal className="mt-5" delay={150}>
+          <EditorialRail desktopTrailing={featuredDemo.desktopBottomRail} mobileTrailing={featuredDemo.mobileBottomRail}>
             EZE WEB STUDIO
           </EditorialRail>
         </Reveal>
