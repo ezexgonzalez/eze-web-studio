@@ -100,22 +100,42 @@ export const siteConfig = {
   },
 
   featuredDemo: {
-    eyebrow: "PROYECTOS",
-    title: "Una landing diseñada para un gimnasio boutique.",
-    description:
-      "Una dirección visual fuerte, navegación clara y una experiencia responsive pensada para que cada visita encuentre el camino hacia la consulta.",
+    projectLabel: "PROYECTO 01",
+    title: "Gimnasio boutique",
+    desktopDescription:
+      "Una landing moderna y enfocada en la conversión para un gimnasio boutique de entrenamiento funcional.",
+    mobileDescription:
+      "Landing page para un gimnasio boutique que combina fuerza, funcionalidad y comunidad, con un diseño moderno y orientado a la conversión.",
     disclosure: "Demo conceptual · Proyecto de portfolio",
-    projectLabel: "01 / GIMNASIO BOUTIQUE",
+    topRail: "DISEÑO · DESARROLLO · RESULTADOS",
+    bottomRail: "IDEAS QUE HACEN CRECER",
     desktopImage: {
-      src: "/gym-demo-desktop.webp",
-      alt: "Vista desktop de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
+      src: "/gym-demo-desktop.png",
+      alt: "Captura desktop de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
     },
     mobileImage: {
-      src: "/gym-demo-mobile.webp",
-      alt: "Vista mobile de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
+      src: "/gym-demo-mobile.png",
+      alt: "Captura mobile de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
     },
     liveUrl: "https://eze-demo-gimnasio.vercel.app/",
     liveUrlLabel: "eze-demo-gimnasio.vercel.app",
+    attributes: [
+      {
+        icon: "strategy",
+        label: "Diseño estratégico",
+        description: "Orientado a claridad, consulta y conversión.",
+      },
+      {
+        icon: "mobile",
+        label: "Experiencia mobile",
+        description: "Clara y optimizada para cada dispositivo.",
+      },
+      {
+        icon: "identity",
+        label: "Identidad visual",
+        description: "Una dirección propia para el negocio.",
+      },
+    ],
   },
 
   about: {
