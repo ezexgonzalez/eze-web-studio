@@ -100,11 +100,12 @@ export const siteConfig = {
   },
 
   featuredDemo: {
-    eyebrow: "PROYECTO / DEMO",
+    eyebrow: "PROYECTOS",
     title: "Una landing diseñada para un gimnasio boutique.",
     description:
       "Una dirección visual fuerte, navegación clara y una experiencia responsive pensada para que cada visita encuentre el camino hacia la consulta.",
     disclosure: "Demo conceptual · Proyecto de portfolio",
+    projectLabel: "01 / GIMNASIO BOUTIQUE",
     desktopImage: {
       src: "/gym-demo-desktop.webp",
       alt: "Vista desktop de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
@@ -113,7 +114,8 @@ export const siteConfig = {
       src: "/gym-demo-mobile.webp",
       alt: "Vista mobile de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
     },
-    liveUrl: null,
+    liveUrl: "https://eze-demo-gimnasio.vercel.app/",
+    liveUrlLabel: "eze-demo-gimnasio.vercel.app",
   },
 
   about: {
