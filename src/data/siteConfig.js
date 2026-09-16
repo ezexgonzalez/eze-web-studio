@@ -110,11 +110,11 @@ export const siteConfig = {
     topRail: "DISEÑO · DESARROLLO · RESULTADOS",
     bottomRail: "IDEAS QUE HACEN CRECER",
     desktopImage: {
-      src: "/gym-demo-desktop.png",
+      src: "/gym-demo-desktop.webp",
       alt: "Captura desktop de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
     },
     mobileImage: {
-      src: "/gym-demo-mobile.png",
+      src: "/gym-demo-mobile.webp",
       alt: "Captura mobile de la demo conceptual de gimnasio boutique creada por Eze Web Studio.",
     },
     liveUrl: "https://eze-demo-gimnasio.vercel.app/",
