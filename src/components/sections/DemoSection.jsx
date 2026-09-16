@@ -81,7 +81,7 @@ function DemoSection() {
   return (
     <section
       id="demo"
-      className="relative isolate scroll-mt-28 overflow-hidden bg-black px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-8"
+      className="relative isolate scroll-mt-28 overflow-hidden bg-black px-4 py-8 sm:px-6 sm:py-8 lg:px-8 lg:py-6"
     >
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
@@ -90,7 +90,7 @@ function DemoSection() {
           </EditorialRail>
         </Reveal>
 
-        <Reveal className="mt-6 grid gap-5 lg:grid-cols-[1.05fr_0.82fr_0.38fr] lg:items-end lg:gap-8" delay={60}>
+        <Reveal className="mt-5 grid gap-5 lg:grid-cols-[1.05fr_0.82fr_0.38fr] lg:items-end lg:gap-8" delay={60}>
           <div>
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-cyan-200">
               {featuredDemo.projectLabel}
@@ -118,7 +118,7 @@ function DemoSection() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-5 lg:mt-5" delay={110}>
+        <Reveal className="mt-4 lg:mt-4" delay={110}>
           <div className="grid grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] items-start gap-4 sm:grid-cols-[minmax(0,0.84fr)_minmax(0,1.16fr)] md:gap-7 lg:hidden">
             <div className="flex min-h-full flex-col">
               <div className="space-y-4">
@@ -150,7 +150,7 @@ function DemoSection() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-5" delay={150}>
+        <Reveal className="mt-4" delay={150}>
           <EditorialRail desktopTrailing={featuredDemo.desktopBottomRail} mobileTrailing={featuredDemo.mobileBottomRail}>
             EZE WEB STUDIO
           </EditorialRail>
