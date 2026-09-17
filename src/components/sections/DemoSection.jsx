@@ -135,7 +135,7 @@ function DesktopComposition() {
 
   return (
     <>
-      <div className="mt-16 hidden grid-cols-[1fr_1fr_13.25rem] items-end gap-12 lg:grid">
+      <div className="mt-12 hidden grid-cols-[1fr_1fr_13.25rem] items-end gap-12 lg:grid">
         <div>
           <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-cyan-200">
             {featuredDemo.projectLabel}
@@ -177,7 +177,7 @@ function DemoSection() {
         <EditorialRail desktopTrailing={featuredDemo.desktopTopRail} mobileTrailing={featuredDemo.mobileTopRail} />
         <DesktopComposition />
         <MobileComposition />
-        <div className="mt-12 lg:mt-10">
+        <div className="mt-12 lg:mt-14">
           <EditorialRail desktopTrailing={featuredDemo.desktopBottomRail} mobileTrailing={featuredDemo.mobileBottomRail} />
         </div>
       </div>
