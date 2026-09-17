@@ -118,7 +118,7 @@ function MobileLayout() {
 
 function DemoSection() {
   return (
-    <section id="demo" className="relative isolate scroll-mt-28 overflow-hidden bg-[#040607]">
+    <section id="demo" className="relative isolate scroll-mt-28 overflow-hidden bg-black">
       <DesktopLayout />
       <MobileLayout />
     </section>
