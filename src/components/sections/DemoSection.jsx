@@ -36,7 +36,7 @@ function BrowserPreview() {
       </div>
       <img
         alt={featuredDemo.desktopImage.alt}
-        className="block h-[calc(100%-2.5rem)] w-full object-cover object-center"
+        className="block h-[calc(100%-2.5rem)] w-full object-cover object-left"
         decoding="async"
         loading="lazy"
         src={featuredDemo.desktopImage.src}
@@ -55,7 +55,7 @@ function PhonePreview({ mobile = false }) {
     }>
       <img
         alt={featuredDemo.mobileImage.alt}
-        className="block h-full w-full rounded-[inherit] object-cover object-center"
+        className="block h-full w-full rounded-[inherit] object-cover object-left"
         decoding="async"
         loading="lazy"
         src={featuredDemo.mobileImage.src}
