@@ -103,7 +103,7 @@ export const siteConfig = {
     projectLabel: "PROYECTO 01",
     title: "Gimnasio boutique",
     desktopDescription:
-      "Una landing moderna y enfocada en la conversión para un gimnasio boutique de entrenamiento funcional.",
+      "Un sitio web moderno y enfocado en la conversión para un gimnasio de entrenamiento funcional.",
     mobileDescription:
       "Landing page para un gimnasio boutique que combina fuerza, funcionalidad y comunidad, con un diseño moderno y orientado a la conversión.",
     desktopTopRail: "DISEÑO • DESARROLLO • RESULTADOS",
@@ -125,17 +125,17 @@ export const siteConfig = {
       {
         icon: "strategy",
         label: "Diseño estratégico",
-        description: "Orientado a claridad, consulta y conversión.",
+        description: "Orientado a resultados y conversión.",
       },
       {
         icon: "mobile",
         label: "Experiencia mobile",
-        description: "Clara y optimizada para cada dispositivo.",
+        description: "Rápida, clara y optimizada para cada dispositivo.",
       },
       {
         icon: "identity",
         label: "Identidad visual",
-        description: "Una dirección propia para el negocio.",
+        description: "Estética premium que refleja la esencia de la marca.",
       },
     ],
   },
